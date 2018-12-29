@@ -42,16 +42,16 @@ Route::middleware(['auth:api'])->group(function () {
 
   //  Route::post('/reviews/comment','ReviewController@storeComment');
     Route::delete('/reviews/comment/{id}', 'ReviewController@deleteComment');
-
-    Route::post('/reviews/vote', 'ReviewController@vote');
-    Route::post('/restaurants/vote', 'RestaurantController@voteImage');
+    Route::post('/vote','VotingController@storeVote');
+   // Route::post('/reviews/vote', 'ReviewController@vote');
+  //  Route::post('/restaurants/vote', 'RestaurantController@voteImage');
 
     Route::post('comment','CommentController@storeComment');
     Route::put('comment/{id}','RestaurantController@updateComment');
 
     Route::put('/profile/edit/{id}', 'UserController@update');
 
-
+    Route::get('/restaurants/{id}/foods','RestaurantController@showFoods');
     Route::post('/foods','FoodController@store');
     Route::put('/foods','FoodController@update');
 

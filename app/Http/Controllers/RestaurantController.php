@@ -98,4 +98,8 @@ class RestaurantController extends Controller
         return Restaurant::cancelOrder($id);
     }
 
+    public function showFoods($id) {
+        return Restaurant::showFoods($id);
+    }
+
 }

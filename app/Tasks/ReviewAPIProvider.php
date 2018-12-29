@@ -55,7 +55,7 @@ class ReviewAPIProvider {
     }
 
     public function vote($voteData) {
-        $votes = Review::findOrFail($voteData->review_id)->votes();
+        $votes = Review::findOrFail($voteData->id)->votes();
         $exist = $votes->where('user_id', auth()->user()->id)->count();
         // If vote already exist alter the value
         if($exist) {

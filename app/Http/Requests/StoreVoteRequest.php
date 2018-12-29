@@ -3,21 +3,17 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Http\Request;
 
-class StoreReviewRequest extends FormRequest
+class StoreVoteRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
-    public function authorize(Request $request)
+    public function authorize()
     {
-        if(auth()->user()->orders->where('restaurant_id',$request->restaurant_id )->count()){
-            return true;
-        }
-        return false;
+        return true;
     }
 
     /**
@@ -28,8 +24,8 @@ class StoreReviewRequest extends FormRequest
     public function rules()
     {
         return [
-            'content' => ['required', 'string'],
-            'restaurant_id' => ['required','numeric'],
+            'type' => ['required', 'string'],
+            'id' => ['required']
         ];
     }
 }

@@ -63,11 +63,14 @@ class RestaurantAPIProvider {
     }
 
     public function showRestaurant($id) {
-        return Restaurant::findOrFail($id)->load('cuisines','address.district.state','image.restaurantComments.user');
+        return Restaurant::findOrFail($id)->load('cuisines','address.district.state','image.restaurantComments.user','image.restaurantVotes');
+    }
+
+    public function showFoods($id) {
+        return Restaurant::findOrFail($id)->load('foods');
     }
 
     public function storeComment($commentData) {
-
         $comment = new Comment();
         $comment->content = $commentData->content;
         $comment->user_id = auth()->user()->id;
@@ -87,7 +90,7 @@ class RestaurantAPIProvider {
     }
 
     public function showReviewsWithComments($id) {
-        return Restaurant::findOrFail($id)->reviews->load('comments.user','user');
+        return Restaurant::findOrFail($id)->reviews->load('comments.user','user','votes');
     }
 
     public function showRestaurantReviews($id) {
@@ -95,7 +98,7 @@ class RestaurantAPIProvider {
     }
 
     public function voteImage($voteData) {
-        $votes = Image::findOrFail($voteData->image_id)->restaurantVotes();
+        $votes = Image::findOrFail($voteData->id)->restaurantVotes();
         $exist = $votes->where('user_id', auth()->user()->id)->count();
         // If vote already exist alter the value
         if($exist) {
@@ -118,14 +121,15 @@ class RestaurantAPIProvider {
             'status' => 1,
         ]);
 
-        $orderedFoods = array(
+    /* $orderedFoods = array(
              array('food_id' => 2),
              array('food_id' => 2),
              array('food_id' => 2),
              array('food_id' => 1)
          );
+         */
 
-        foreach ($orderedFoods as $orderedFood) {
+        foreach ($orderedFoods as $orderData->$orderedFood) {
             $selected[] = New OrderedFood($orderedFood);
         }
 

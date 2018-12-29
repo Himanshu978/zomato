@@ -15,17 +15,7 @@ class FoodController extends Controller
      */
     public function index()
     {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //s
     }
 
     /**
@@ -36,7 +26,7 @@ class FoodController extends Controller
      */
     public function store(StoreFoodRequest $request)
     {
-            return Food::storeFood($request);
+        return Food::storeFood($request);
     }
 
     /**
