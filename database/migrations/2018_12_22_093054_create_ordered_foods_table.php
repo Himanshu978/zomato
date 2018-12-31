@@ -17,11 +17,11 @@ class CreateOrderedFoodsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('food_id');
             $table->unsignedInteger('order_id');
-
+            $table->unsignedInteger('qty');
             $table->timestamps();
 
             $table->foreign('food_id','order_id')->references('id','id')->on('foods','orders')->onDelete('cascade','cascade');
-         //   $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
+
         });
     }
 

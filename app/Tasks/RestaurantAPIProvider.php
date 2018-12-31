@@ -129,7 +129,7 @@ class RestaurantAPIProvider {
          );
          */
 
-        foreach ($orderedFoods as $orderData->$orderedFood) {
+        foreach ($orderData->orderedFoods as $orderedFood) {
             $selected[] = New OrderedFood($orderedFood);
         }
 

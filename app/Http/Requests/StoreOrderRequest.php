@@ -12,10 +12,11 @@ class StoreOrderRequest extends FormRequest
      * @return bool
      */
     public function authorize()
-    {
+    { /*
         if(auth()->user()->type == 2){
             return false;
         }
+        */
         return true;
     }
 
