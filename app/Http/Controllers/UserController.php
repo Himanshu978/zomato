@@ -78,6 +78,6 @@ class UserController extends Controller
     }
 
     public function myOrders() {
-        return auth()->user()->orderedFoods;
+        return auth()->user()->load('orders.orderedFoods.food','orders.restaurant');
     }
 }

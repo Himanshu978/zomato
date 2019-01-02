@@ -35,9 +35,9 @@ class StoreRestaurantRequest extends FormRequest
             'phone' => ['required', 'digits_between:8,15'],
             'opening' => ['required'],
             'closing' => ['required'],
-            'address_id' => ['required'],
-
+            'street_address' => ['required']
         ];
+
     }
 
 

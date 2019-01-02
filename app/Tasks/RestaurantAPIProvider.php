@@ -7,6 +7,13 @@ use App\Image;
 use App\Order;
 use App\OrderedFood;
 use App\Comment;
+use App\Address;
+use App\District;
+use Illuminate\Support\Facades\Storage;
+use Response;
+use Log;
+use File;
+
 use Illuminate\Support\Facades\Auth;
 
 class RestaurantAPIProvider {
@@ -17,26 +24,42 @@ class RestaurantAPIProvider {
 
     public function storeRestaurant($restaurantData) {
 
-      //  dd($restaurantData);
-
-        $restaurant =  Restaurant::create([
-            'name' => $restaurantData['name'],
-            'description' => $restaurantData['description'],
-            'phone' => $restaurantData['phone'],
-            'opening' => $restaurantData['opening'],
-            'closing' => $restaurantData['closing'],
-            'address_id' => $restaurantData['address_id'],
-            'user_id' => 3,
+        $address =  District::findOrFail($restaurantData->district_id)
+        ->addresses()->create([
+          'street_address' => $restaurantData->street_address
         ]);
 
-        if( $restaurantData['image_url']) {
+        $restaurant =  Restaurant::create([
+            'name' => $restaurantData->name,
+            'description' => $restaurantData->description,
+            'phone' => $restaurantData->phone,
+            'opening' => $restaurantData->opening,
+            'closing' => $restaurantData->closing,
+            'address_id' => $address->id,
+            'user_id' => auth()->user()->id
+        ]);
+
+        $file_data = $restaurantData->image;
+
+
+        if($file_data!=""){
+
+            $pos  = strpos($file_data, ';');
+            $type = explode(':', substr($file_data, 0, $pos))[1];
+            $type = explode('/',$type);
+            $file_name = '/image_'.time().'.'.'jpg';
+            $storage_path =  public_path().$file_name;
+
+           // \Log::debug("file_data".$file_data);
+            \Log::debug("base_64 decode".base64_decode($storage_path));
+            file_put_contents($file_name, $file_data);
+          //  Storage::put($file_name, base64_decode($file_data));
             $restaurant->image()->create([
-                'url' => $restaurantData['image_url']
+               'url' => $file_name
             ]);
         }
 
         return $restaurant;
-
     }
 
     public function updateRestaurant($restaurantData) {
@@ -57,13 +80,27 @@ class RestaurantAPIProvider {
             'closing' => $restaurantData['closing'],
             'address_id' => $restaurantData['address_id'],
             'user_id' => 3,
-
         ]);
 
     }
 
     public function showRestaurant($id) {
-        return Restaurant::findOrFail($id)->load('cuisines','address.district.state','image.restaurantComments.user','image.restaurantVotes');
+        $restaurant = Restaurant::findOrFail($id)->load('cuisines','address.district.state','image.restaurantComments.user','image.restaurantVotes');
+
+        // $path = public_path().'/uploads/images/'.$fileName;
+        // return $restaurant;
+        // return base_path();
+        // $image =  base64_encode(Storage::get($restaurant->image->url));
+        // return $image;
+
+        return $restaurant;
+    }
+
+    public function getImage($imagePath) {
+        return File::get(public_path($imagePath));
+       // return public_path($imagePath) ;
+       // return Storage::download('public/'.$imagePath);
+       // return base64_encode();
     }
 
     public function showFoods($id) {
@@ -120,14 +157,6 @@ class RestaurantAPIProvider {
             'user_id' => auth()->user()->id,
             'status' => 1,
         ]);
-
-    /* $orderedFoods = array(
-             array('food_id' => 2),
-             array('food_id' => 2),
-             array('food_id' => 2),
-             array('food_id' => 1)
-         );
-         */
 
         foreach ($orderData->orderedFoods as $orderedFood) {
             $selected[] = New OrderedFood($orderedFood);

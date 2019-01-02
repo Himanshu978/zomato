@@ -31,7 +31,7 @@ class RestaurantController extends Controller
     {
     //   $validated = $request->validated();
 
-        return Restaurant::storeRestaurant($request->all());
+        return Restaurant::storeRestaurant($request);
 
     }
 
@@ -100,6 +100,10 @@ class RestaurantController extends Controller
 
     public function showFoods($id) {
         return Restaurant::showFoods($id);
+    }
+
+    public function getImage($path) {
+        return Restaurant::getImage($path);
     }
 
 }

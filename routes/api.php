@@ -17,7 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return 'you are logged in';
     return $request->user();
 });
-
+Route::get('/restaurants/image/{path}','RestaurantController@getImage');
 Route::post('/register','Auth\RegisterController@create');
 Route::post('/login', 'Auth\LoginController@login');
 
@@ -30,6 +30,7 @@ Route::middleware(['auth:api'])->group(function () {
     Route::post('/restaurants','RestaurantController@store');
     Route::get('/restaurants/{id}','RestaurantController@show');
     Route::get('/restaurants','RestaurantController@index');
+
     // Route::get('/restaurants/{id}/reviews','ReviewController@showRestaurantReviews');
     Route::get('/restaurants/{id}/reviews', 'ReviewController@showReviewsWithComments');
     Route::post('/restaurant/{id}/cuisines','RestaurantController@storeCuisines');
@@ -40,11 +41,11 @@ Route::middleware(['auth:api'])->group(function () {
     Route::put('/reviews/{id}','ReviewController@update');
     Route::delete('/reviews/{id}','ReviewController@destroy');
 
-  //  Route::post('/reviews/comment','ReviewController@storeComment');
+    // Route::post('/reviews/comment','ReviewController@storeComment');
     Route::delete('/reviews/comment/{id}', 'ReviewController@deleteComment');
     Route::post('/vote','VotingController@storeVote');
-   // Route::post('/reviews/vote', 'ReviewController@vote');
-  //  Route::post('/restaurants/vote', 'RestaurantController@voteImage');
+    // Route::post('/reviews/vote', 'ReviewController@vote');
+    // Route::post('/restaurants/vote', 'RestaurantController@voteImage');
 
     Route::post('comment','CommentController@storeComment');
     Route::put('comment/{id}','RestaurantController@updateComment');

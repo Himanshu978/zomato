@@ -16,7 +16,6 @@ class FoodAPIProvider {
             'cuisine_id' =>  $foodData->cuisine_id,
             'restaurant_id' => $foodData->restaurant_id
         ]);
-
     }
 
     public function updateFood($foodData){
@@ -26,7 +25,6 @@ class FoodAPIProvider {
             'price' =>  $foodData->price,
             'cuisine_id' =>  $foodData->cuisine_id,
         ]);
-
     }
 
 }

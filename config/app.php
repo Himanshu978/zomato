@@ -163,6 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -230,6 +231,7 @@ return [
         'Restaurant' => App\Facades\Restaurant::class,
         'Review' => App\Facades\Review::class,
         'Food' => App\Facades\Food::class,
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 
