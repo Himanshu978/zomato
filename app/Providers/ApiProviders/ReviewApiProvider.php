@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Tasks;
+namespace App\Providers\ApiProviders;
 
 use App\Restaurant;
 use App\Review;
 use App\Comment;
 use Illuminate\Support\Facades\Auth;
 
-class ReviewAPIProvider {
+class ReviewApiProvider {
 
-    public function storeReview($reviewData) {
+    public function store($reviewData) {
 
 
         return Restaurant::findOrFail($reviewData->restaurant_id)->reviews()
@@ -20,38 +20,20 @@ class ReviewAPIProvider {
 
     }
 
-    public function updateReview($reviewData, $id) {
+    public function update($reviewData, $id) {
 
         return Review::findOrFail($id)->where('user_id',auth()->user()->id)->update([
             'content' => $reviewData->content,
         ]);
     }
 
-
-
     public function showUserReviews(){
         return auth()->user()->reviews;
     }
 
-    public function deleteReview($id) {
+    public function delete($id) {
 
         return Review::where('id',$id)->where('user_id', auth()->user()->id)->delete();
-    }
-
-    public function storeComment($commentData) {
-
-        $comment = new Comment();
-        $comment->content = $commentData->content;
-        $comment->user_id = auth()->user()->id;
-        return Review::findOrFail($commentData->id)->comments()->save($comment);
-    }
-
-    public function deleteComment($id) {
-        return Comment::where('id',$id)->where('user_id', auth()->user()->id)->delete();
-    }
-
-    public function getComments($id) {
-        return Review::findOrFail($id)->comments;
     }
 
     public function vote($voteData) {

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreVoteRequest extends FormRequest
+class CreateOrderRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,6 +13,10 @@ class StoreVoteRequest extends FormRequest
      */
     public function authorize()
     {
+        if(auth()->user()->type == 2){
+            return false;
+        }
+
         return true;
     }
 
@@ -24,8 +28,7 @@ class StoreVoteRequest extends FormRequest
     public function rules()
     {
         return [
-            'type' => ['required', 'string'],
-            'id' => ['required']
+            'restaurant_id' => ['required', 'numeric']
         ];
     }
 }

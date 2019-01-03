@@ -24,11 +24,11 @@ class RestaurantServiceProvider extends ServiceProvider
     public function register()
     {
         app()->singleton('restaurant', function () {
-            return new \App\Tasks\RestaurantAPIProvider;
+            return new \App\Providers\ApiProviders\RestaurantApiProvider;
         });
 
         app()->singleton('food', function () {
-            return new \App\Tasks\FoodAPIProvider;
+            return new \App\Providers\ApiProviders\FoodApiProvider;
         });
     }
 }

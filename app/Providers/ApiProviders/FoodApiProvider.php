@@ -1,14 +1,18 @@
 <?php
 
-namespace App\Tasks;
+namespace App\Providers\ApiProviders;
 
 use App\Food;
 use Illuminate\Support\Facades\Auth;
 
 
-class FoodAPIProvider {
+class FoodApiProvider {
 
-    public function storeFood($foodData){
+    public function getAll($restaurant_id) {
+        return Restaurant::findOrFail($restaurant_id)->load('foods');
+    }
+
+    public function create($foodData){
         return Food::create([
             'name' => $foodData->name,
             'description' =>  $foodData->description,
@@ -18,7 +22,7 @@ class FoodAPIProvider {
         ]);
     }
 
-    public function updateFood($foodData){
+    public function update($foodData){
         return Food::update([
             'name' => $foodData->name,
             'description' =>  $foodData->description,

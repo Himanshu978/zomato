@@ -55,13 +55,11 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Integer  user id     $id
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateUserRequest $request, $id)
     {
-        dd($request->all());
-
         $user = new User();
         return $user->updateUser($request->all());
     }
@@ -77,6 +75,11 @@ class UserController extends Controller
         //
     }
 
+    /**
+     * Returns the list of users's orders
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function myOrders() {
         return auth()->user()->load('orders.orderedFoods.food','orders.restaurant');
     }

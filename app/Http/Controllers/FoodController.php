@@ -4,62 +4,43 @@ namespace App\Http\Controllers;
 
 use App\Facades\Food;
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreFoodRequest;
+use App\Http\Requests\CreateFoodRequest;
 
 class FoodController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
+     * @param  Integer $id -> restaurant id
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-
+        return Food::getAll($id);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\CreateFoodRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreFoodRequest $request)
+    public function store(CreateFoodRequest $request)
     {
-        return Food::storeFood($request);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Food  $food
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Food $food)
-    {
-        //
+        return Food::create($request);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Food  $food
+     * @param  \App\Http\Requests\CreateFoodRequest $request
+     * @param  \App\Food                            $food
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreFoodRequest $request, Food $food)
+    public function update(CreateFoodRequest $request, Food $food)
     {
-        return Food::updateFood($request);
+        return Food::update($request);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Food  $food
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Food $food)
-    {
 
-    }
 }

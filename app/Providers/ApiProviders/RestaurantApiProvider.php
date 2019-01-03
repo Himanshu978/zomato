@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Tasks;
+namespace App\Providers\ApiProviders;
 
 use App\Restaurant;
 use App\Image;
@@ -16,7 +16,7 @@ use File;
 
 use Illuminate\Support\Facades\Auth;
 
-class RestaurantAPIProvider {
+class RestaurantApiProvider {
 
     public function getAll() {
         return Restaurant::all();
@@ -87,31 +87,11 @@ class RestaurantAPIProvider {
     public function showRestaurant($id) {
         $restaurant = Restaurant::findOrFail($id)->load('cuisines','address.district.state','image.restaurantComments.user','image.restaurantVotes');
 
-        // $path = public_path().'/uploads/images/'.$fileName;
-        // return $restaurant;
-        // return base_path();
-        // $image =  base64_encode(Storage::get($restaurant->image->url));
-        // return $image;
-
         return $restaurant;
     }
 
     public function getImage($imagePath) {
         return File::get(public_path($imagePath));
-       // return public_path($imagePath) ;
-       // return Storage::download('public/'.$imagePath);
-       // return base64_encode();
-    }
-
-    public function showFoods($id) {
-        return Restaurant::findOrFail($id)->load('foods');
-    }
-
-    public function storeComment($commentData) {
-        $comment = new Comment();
-        $comment->content = $commentData->content;
-        $comment->user_id = auth()->user()->id;
-        return Image::findOrFail($commentData->id)->restaurantComments()->save($comment);
     }
 
     public function updateComment($commentData, $id) {

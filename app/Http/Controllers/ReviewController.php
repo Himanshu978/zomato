@@ -5,51 +5,41 @@ namespace App\Http\Controllers;
 use App\Facades\Review;
 use App\Facades\Restaurant;
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreReviewRequest;
+use App\Http\Requests\CreateReviewRequest;
 use App\Http\Requests\StoreCommentRequest;
 use App\Http\Requests\UpdateReviewRequest;
 use Auth;
 use App\User;
+use phpDocumentor\Reflection\Types\Integer;
 
 class ReviewController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
+     * @param  Integer $restaurant_id
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($restaurant_id)
     {
-
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return Restaurant::showReviewsWithComments($restaurant_id);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\CreateReviewRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreReviewRequest $request)
+    public function store(CreateReviewRequest $request)
     {
-
-       return Review::storeReview($request);
-
+        return Review::storeReview($request);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Review  $review
+     * @param  \App\Review $review
      * @return \Illuminate\Http\Response
      */
     public function show(Review $review)
@@ -57,12 +47,11 @@ class ReviewController extends Controller
         //
     }
 
-
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Review  $review
+     * @param  \App\Http\Requests\UpdateReviewRequest $request
+     * @param                           Integer     Review id  ->    $id
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateReviewRequest $request, $id)
@@ -73,7 +62,7 @@ class ReviewController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Review  $review
+     * @param      Integer     Review id  ->    $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -81,32 +70,16 @@ class ReviewController extends Controller
         return Review::deleteReview($id);
     }
 
-    public function showReviews($id){
-        return Restaurant::showRestaurantReviews($id);
-    }
-
-    public function showUserReviews() {
+    /**
+     * Display the list of user's reviews
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showUserReviews()
+    {
         return Review::showUserReviews();
     }
 
-    public function storeComment(StoreCommentRequest $request) {
-        return Review::storeComment($request);
-    }
 
-    public function deleteComment($id) {
-        return Review::deleteComment($id);
-    }
-
-    public function getComments($id) {
-        return Review::getComments();
-    }
-
-    public function showReviewsWithComments($id){
-        return Restaurant::showReviewsWithComments($id);
-    }
-
-    public function vote(Request $request) {
-        return Review::vote($request);
-    }
 
 }

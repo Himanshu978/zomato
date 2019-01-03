@@ -178,7 +178,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\RestaurantServiceProvider::class,
-        App\Providers\ReviewServiceProvider::class
+        App\Providers\ReviewServiceProvider::class,
+        App\Providers\CommentServiceProvider::class,
 
     ],
 
@@ -231,6 +232,7 @@ return [
         'Restaurant' => App\Facades\Restaurant::class,
         'Review' => App\Facades\Review::class,
         'Food' => App\Facades\Food::class,
+        'Comment' => App\Facades\Comment::class,
         'Image' => Intervention\Image\Facades\Image::class,
 
     ],

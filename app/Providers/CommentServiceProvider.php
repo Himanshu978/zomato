@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class ReviewServiceProvider extends ServiceProvider
+class CommentServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap services.
@@ -23,8 +23,8 @@ class ReviewServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        app()->singleton('review', function () {
-            return new \App\Providers\ApiProviders\ReviewApiProvider;
+        app()->singleton('comment', function () {
+            return new \App\Providers\ApiProviders\CommentApiProvider;
         });
     }
 }
