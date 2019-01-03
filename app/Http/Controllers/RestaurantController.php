@@ -30,7 +30,7 @@ class RestaurantController extends Controller
     {
         //   $validated = $request->validated();
 
-        return Restaurant::createRestaurant($request);
+        return Restaurant::create($request);
 
     }
 

@@ -13,14 +13,14 @@ class CreateCuisineRestaurantsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cuisine_restaurants', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedinteger('restaurant_id');
-            $table->unsignedInteger('cuisine_id');
-            $table->timestamps();
-
-            $table->foreign('restaurant_id','cuisine_id')->references('id','id')->on('restaurants','cuisines');
-        });
+//        Schema::create('cuisine_restaurants', function (Blueprint $table) {
+//            $table->increments('id');
+//            $table->unsignedinteger('restaurant_id');
+//            $table->unsignedInteger('cuisine_id');
+//            $table->timestamps();
+//
+//            $table->foreign('restaurant_id','cuisine_id')->references('id','id')->on('restaurants','cuisines');
+//        });
     }
 
     /**
