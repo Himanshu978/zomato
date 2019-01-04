@@ -11,12 +11,11 @@ use App\Http\Requests\CreateCommentRequest;
 class CommentController extends Controller
 {
 
+
     /**
-     * Returns the list of Comments.
-     *
-     * @param  Integer  $id
-     * @param  Comment's type  $type
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @param $type
+     * @return mixed
      */
     public function index($id, $type)
     {
@@ -33,18 +32,18 @@ class CommentController extends Controller
     {
 
         return Comment::create($request);
-
     }
 
+
+
+
     /**
-     * Remove the comment from storage.
-     *
-     * @param  Integer      Comment Id   ->    $id
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return mixed
      */
     public function destroy($id)
     {
-        return Comment::delete($comment_id);
+        return Comment::delete($id);
     }
 
 }

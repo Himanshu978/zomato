@@ -20,64 +20,20 @@ use Illuminate\Support\Facades\Auth;
 class RestaurantApiProvider
 {
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
     public function getAll()
     {
         return Restaurant::all();
     }
 
-    public function create($restaurantData)
-    {
 
-        DB::beginTransaction();
-        try {
-            $address_id = $this->createAddress($restaurantData->district_id, $restaurantData->street_address);
-
-            $data = $this->setData($restaurantData, $address_id);
-
-            $restaurant = Restaurant::create($data);
-
-            if($restaurantData->image) {
-                $this->storeImage($restaurantData->image, $restaurant);
-            }
-
-            DB::commit();
-
-            return $restaurant;
-        } catch (\Exception $ex) {
-            DB::rollback();
-            return response()->json(['error' => $ex->getMessage()], 500);
-        }
-
-    }
-
-    private function storeImage($file_data,$restaurant) {
-        if ($file_data != "") {
-
-            $pos          = strpos($file_data, ';');
-            $type         = explode(':', substr($file_data, 0, $pos))[1];
-            $type         = explode('/', $type);
-            $file_name    = 'image_' . time() . '.' . 'jpg';
-
-            $storage_path = public_path() .'/'. $file_name;
-
-            file_put_contents($storage_path, $file_data);
-
-            $restaurant->image()->create([
-                'url' => $file_name
-            ]);
-        }
-    }
-
-    private function createAddress($district_id, $street_address) {
-         $address = District::findOrFail($district_id)
-                           ->addresses()->create([
-                'street_address' => $street_address
-            ]);
-        return $address->id;
-    }
-
-
-    public function updateRestaurant($restaurantData)
+    /**
+     * @param $restaurantData
+     * @return bool
+     */
+    public function update($restaurantData)
     {
 
 
@@ -100,42 +56,60 @@ class RestaurantApiProvider
 
     }
 
-    public function showRestaurant($id)
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function show($id)
     {
         $restaurant = Restaurant::findOrFail($id)->load('cuisines', 'address.district.state', 'image.restaurantComments.user', 'image.restaurantVotes');
 
         return $restaurant;
     }
 
+    /**
+     * @param $imagePath
+     * @return mixed
+     */
     public function getImage($imagePath)
     {
         return File::get(public_path($imagePath));
     }
 
-    public function updateComment($commentData, $id)
-    {
-        return Comment::find($id)
-                      ->where('user_id', auth()->user()->id)
-                      ->update([
-                          'content' => $commentData->content
-                      ]);
-    }
 
-    public function storeCuisines($cuisines, $id)
+
+    /**
+     * @param $cuisines
+     * @param $id
+     * @return mixed
+     */
+    public function addCuisines($cuisines, $id)
     {
         return Restaurant::findOrFail($id)->cuisines()->sync($cuisines->all(), false);
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function showReviewsWithComments($id)
     {
         return Restaurant::findOrFail($id)->reviews->load('comments.user', 'user', 'votes');
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function showRestaurantReviews($id)
     {
         return Restaurant::findOrFail($id)->reviews->load('user');
     }
 
+    /**
+     * @param $voteData
+     * @return mixed
+     */
     public function voteImage($voteData)
     {
         $votes = Image::findOrFail($voteData->id)->restaurantVotes();
@@ -153,7 +127,11 @@ class RestaurantApiProvider
 
     }
 
-    public function storeOrder($orderData)
+    /**
+     * @param $orderData
+     * @return mixed
+     */
+    public function placeOrder($orderData)
     {
         $order = Restaurant::findOrFail($orderData->restaurant_id)
                            ->orders()->create([
@@ -169,6 +147,10 @@ class RestaurantApiProvider
 
     }
 
+    /**
+     * @param $order_id
+     * @return mixed
+     */
     public function cancelOrder($order_id)
     {
 
@@ -177,15 +159,5 @@ class RestaurantApiProvider
         ]);
     }
 
-    public function setData($restaurantData, $address_id) {
-     return [
-        'name'        => $restaurantData->name,
-        'description' => $restaurantData->description,
-        'phone'       => $restaurantData->phone,
-        'opening'     => $restaurantData->opening,
-        'closing'     => $restaurantData->closing,
-        'address_id'  => $address_id,
-        'user_id'     => auth()->user()->id
-    ];
-}
+
 }

@@ -2,14 +2,23 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
 
+/**
+ * Class LoginController
+ *
+ * @package App\Http\Controllers\Auth
+ */
 class LoginController extends Controller
 {
 
+    /**
+     * @var int
+     */
     public $successStatus = 200;
     /*
     |--------------------------------------------------------------------------
@@ -41,7 +50,12 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function login(Request $request) {
+
+    /**
+     * @param LoginRequest $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function login(LoginRequest $request) {
 
         //return "hey";
 

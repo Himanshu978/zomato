@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Facades\Restaurant;
+use App\Http\Requests\CreateCuisineRequest;
+use App\Tasks\RestaurantTask;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateOrderRequest;
 use App\Http\Requests\CreateRestaurantRequest;
@@ -28,50 +30,43 @@ class RestaurantController extends Controller
      */
     public function store(CreateRestaurantRequest $request)
     {
-        //   $validated = $request->validated();
-
-        return Restaurant::create($request);
-
+        $restaurant = new RestaurantTask();
+        return $restaurant->create($request);
     }
 
+
     /**
-     * Display the specified restaurant.
-     *
-     * @param  Integer  Restaurant's Id   ->   $id
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return mixed
      */
     public function show($id)
     {
-        return Restaurant::showRestaurant($id);
+        return Restaurant::show($id);
     }
 
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\CreateRestaurantRequest $request
-     * @param                                             Integer  Restaurant's Id    ->     $id
-     * @return \Illuminate\Http\Response
+     * @param CreateRestaurantRequest $request
+     * @param                         $id
+     * @return mixed
      */
     public function update(CreateRestaurantRequest $request, $id)
     {
         $validated = $request->validated();
 
-        return Restaurant::updateRestaurant($validated);
+        return Restaurant::update($validated);
 
     }
 
 
     /**
-     * Store a newly created cuisine in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param                           Integer   Restaurant id  ->  $id
-     * @return \Illuminate\Http\Response
+     * @param CreateCuisineRequest $request
+     * @param                      $id
+     * @return mixed
      */
-    public function storeCuisines(Request $request, $id)
+    public function addCuisines(CreateCuisineRequest $request, $id)
     {
-        return Restaurant::storeCuisines($request, $id);
+        return Restaurant::addCuisines($request, $id);
     }
 
     /**
@@ -80,27 +75,25 @@ class RestaurantController extends Controller
      * @param  \App\Http\Requests\CreateOrderRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function storeOrder(CreateOrderRequest $request)
+    public function placeOrder(CreateOrderRequest $request)
     {
-        return Restaurant::storeOrder($request);
+        return Restaurant::placeOrder($request);
     }
 
+
     /**
-     * Store a newly created order in storage.
-     *
-     * @param   Integer   order id   ->   $id
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return mixed
      */
     public function cancelOrder($id)
     {
         return Restaurant::cancelOrder($id);
     }
 
+
     /**
-     * Restaurant's Image
-     *
-     * @param   image storage path      $path
-     * @return \Illuminate\Http\Response
+     * @param $path
+     * @return mixed
      */
     public function getImage($path)
     {

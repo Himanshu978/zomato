@@ -8,11 +8,10 @@ use App\Http\Requests\CreateFoodRequest;
 
 class FoodController extends Controller
 {
+
     /**
-     * Display a listing of the resource.
-     *
-     * @param  Integer $id -> restaurant id
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return mixed
      */
     public function index($id)
     {

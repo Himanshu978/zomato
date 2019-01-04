@@ -13,12 +13,13 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/restaurants/image/{path}','RestaurantController@getImage');
+
 Route::post('/register','Auth\RegisterController@create');
 Route::post('/login', 'Auth\LoginController@login');
 
 Route::get('/states', 'AppController@getStates');
 Route::get('/districts/{state_id}', 'AppController@getDistricts');
+Route::get('/restaurants/image/{path}','RestaurantController@getImage');
 
 
 Route::middleware(['auth:api'])->group(function () {
@@ -27,10 +28,10 @@ Route::middleware(['auth:api'])->group(function () {
     Route::get('/restaurants/{id}','RestaurantController@show');
     Route::get('/restaurants','RestaurantController@index');
 
-    Route::post('/restaurants/{id}/cuisines','RestaurantController@storeCuisines');
+    Route::post('/restaurants/{id}/cuisines','RestaurantController@addCuisines');
 
     Route::post('/reviews','ReviewController@store');
-    Route::get('/reviews/{restaurant_id}','ReviewController@index');
+    Route::get('/reviews/{restaurant_id}/{type?}','ReviewController@index');
     Route::put('/reviews/{id}','ReviewController@update');
     Route::delete('/reviews/{id}','ReviewController@destroy');
 
@@ -44,7 +45,7 @@ Route::middleware(['auth:api'])->group(function () {
     Route::post('/foods','FoodController@store');
     Route::put('/foods','FoodController@update');
 
-    Route::post('/orders','RestaurantController@storeOrder');
+    Route::post('/orders','RestaurantController@placeOrder');
     Route::get('/orders','UserController@myOrders');
     Route::delete('/orders/{id}','RestaurantController@cancelOrder');
 });

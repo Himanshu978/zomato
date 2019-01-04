@@ -7,10 +7,18 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+/**
+ * Class User
+ *
+ * @package App
+ */
 class User extends Authenticatable
 {
     use HasApiTokens, Notifiable;
 
+    /**
+     * @var array
+     */
     protected $guarded = ['id'];
    // protected $fillable = [];
 
@@ -24,33 +32,55 @@ class User extends Authenticatable
     ];
 
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function address() {
       return $this->belongsTo(User::class);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function reviews(){
        return $this->hasMany(Review::class);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function votes() {
        return $this->hasMany(Vote::class);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function orders() {
        return $this->hasMany(Order::class);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function comments () {
        return $this->hasMany(Comment::class);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+     */
     public function orderedFoods() {
         return $this->hasManyThrough(OrderedFood::class,Order::class);
     }
 
 
     //---------------
-    public function updateUser($userData){
+
+    /**
+     * @param $userData
+     */
+     public function updateUser($userData){
         dd($userData->firstname);
           auth()->user()->update([
             'firstname' => $userData->firstname,

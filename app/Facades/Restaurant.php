@@ -3,6 +3,11 @@ namespace App\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
+/**
+ * Class Restaurant
+ *
+ * @package App\Facades
+ */
 class Restaurant extends Facade
 {
     /**

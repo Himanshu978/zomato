@@ -20,9 +20,15 @@ class ReviewController extends Controller
      * @param  Integer $restaurant_id
      * @return \Illuminate\Http\Response
      */
-    public function index($restaurant_id)
+    public function index($restaurant_id, $type = "restaurant")
     {
-        return Restaurant::showReviewsWithComments($restaurant_id);
+        if($type == "user"){
+            return Review::showUserReviews();
+        }
+        else if( $type == "restaurant") {
+            return Restaurant::showReviewsWithComments($restaurant_id);
+        }
+
     }
 
     /**
@@ -33,7 +39,7 @@ class ReviewController extends Controller
      */
     public function store(CreateReviewRequest $request)
     {
-        return Review::storeReview($request);
+        return Review::store($request);
     }
 
     /**
@@ -47,38 +53,28 @@ class ReviewController extends Controller
         //
     }
 
+
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateReviewRequest $request
-     * @param                           Integer     Review id  ->    $id
-     * @return \Illuminate\Http\Response
+     * @param UpdateReviewRequest $request
+     * @param                     $id
+     * @return mixed
      */
     public function update(UpdateReviewRequest $request, $id)
     {
         return Review::updateReview($request, $id);
     }
 
+
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param      Integer     Review id  ->    $id
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return mixed
      */
     public function destroy($id)
     {
         return Review::deleteReview($id);
     }
 
-    /**
-     * Display the list of user's reviews
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function showUserReviews()
-    {
-        return Review::showUserReviews();
-    }
+
 
 
 
