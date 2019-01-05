@@ -27,7 +27,7 @@ class AddForeignKeyToFoodsTable extends Migration
     public function down()
     {
         Schema::table('foods', function (Blueprint $table) {
-            //
+            $table->dropForeign(['restaurant_id','cuisine_id']);
         });
     }
 }

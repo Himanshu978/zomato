@@ -28,7 +28,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
 
-          //  $table->foreign('address_id')->references('id')->on('address');
+
         });
     }
 

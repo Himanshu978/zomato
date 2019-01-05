@@ -31,12 +31,6 @@ class Review extends Model
       return $this->morphMany(Comment::class,'commenteable');
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function food(){
-       return $this->belongsTo(Food::class);
-    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphOne

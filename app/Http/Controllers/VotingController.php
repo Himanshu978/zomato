@@ -18,10 +18,10 @@ class VotingController extends Controller
     public function store(CreateVoteRequest $request) {
 
         if($request->type == 'review'){
-            return Review::vote($request);
+            return Review::vote($request->all());
         }
         else if($request->type == 'restaurant') {
-            return Restaurant::voteImage($request);
+            return Restaurant::voteImage($request->all());
         }
     }
 }

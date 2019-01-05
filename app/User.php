@@ -32,12 +32,22 @@ class User extends Authenticatable
     ];
 
 
-    /**
+    /** todo: check this
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function address() {
-      return $this->belongsTo(User::class);
+//    public function address() {
+//      return $this->hasOne(Address::class);
+//    }
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
+     */
+    public function address()
+    {
+        return $this->morphOne(Address::class, 'addressable');
     }
+
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

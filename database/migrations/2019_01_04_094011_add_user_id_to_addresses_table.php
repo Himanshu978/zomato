@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddForeignKeyToAddressesTable extends Migration
+class AddUserIdToAddressesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,9 @@ class AddForeignKeyToAddressesTable extends Migration
     public function up()
     {
         Schema::table('addresses', function (Blueprint $table) {
-            $table->foreign('district_id')->references('id')->on('districts')->onDelete('cascade');
-
+         //   $table->unsignedInteger('user_id');
+           // $table->foreign('user_id')->references('id')->on('users');
+            $table->dropColumn(['user_id']);
         });
     }
 
@@ -27,7 +28,8 @@ class AddForeignKeyToAddressesTable extends Migration
     public function down()
     {
         Schema::table('addresses', function (Blueprint $table) {
-            $table->dropForeign(['district_id']);
+            $table->dropForeign(['user_id']);
+            $table->dropColumn(['user_id']);
         });
     }
 }

@@ -20,14 +20,22 @@ class Address extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function users() {
-        return $this->hasMany(Address::class);
-    }
+//    public function user() {
+//        return $this->belongsTo(User::class);
+//    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function district() {
         return $this->belongsTo(District::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\MorphTo
+     */
+    public function addressable()
+    {
+        return $this->morphTo();
     }
 }

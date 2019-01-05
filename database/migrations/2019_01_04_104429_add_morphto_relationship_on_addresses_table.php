@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddForeignKeyToRestaurantsTable extends Migration
+class AddMorphtoRelationshipOnAddressesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class AddForeignKeyToRestaurantsTable extends Migration
      */
     public function up()
     {
-        Schema::table('restaurants', function (Blueprint $table) {
-            $table->foreign('address_id' )->references('id')->on('addresses');
-
+        Schema::table('addresses', function (Blueprint $table) {
+            $table->unsignedInteger('addressable_id');
+            $table->string('addressable_type');
         });
     }
 
@@ -26,8 +26,8 @@ class AddForeignKeyToRestaurantsTable extends Migration
      */
     public function down()
     {
-        Schema::table('restaurants', function (Blueprint $table) {
-            $table->dropForeign(['address_id']);
+        Schema::table('addresses', function (Blueprint $table) {
+            $table->dropColumn(['addressable_id','addressable_type']);
         });
     }
 }

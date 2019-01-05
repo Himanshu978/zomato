@@ -14,11 +14,8 @@ class Food extends Model
     /**
      * @var array
      */
-    protected $gaurded = [];
-    /**
-     * @var array
-     */
-    protected $fillable = ['name', 'description', 'price', 'cuisine_id', 'restaurant_id'];
+    protected $guarded = ['id'];
+
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -50,6 +47,10 @@ class Food extends Model
     public function orderdFoods()
     {
         return $this->hasMany(OrderedFood::class);
+    }
+
+    public function orders() {
+        return $this->belongsToMany(Order::class, 'foods_orders')->withPivot('qty')->withTimestamps();
     }
 
 }

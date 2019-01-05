@@ -9,10 +9,10 @@ use App\OrderedFood;
 use App\Comment;
 use App\Address;
 use App\District;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Response;
 use Log;
-use File;
 use DB;
 
 use Illuminate\Support\Facades\Auth;
@@ -35,8 +35,6 @@ class RestaurantApiProvider
      */
     public function update($restaurantData)
     {
-
-
         /*
            Restaurant::w->image()->update([
                    'url' => $restaurantData['image_url']
@@ -67,6 +65,7 @@ class RestaurantApiProvider
         return $restaurant;
     }
 
+
     /**
      * @param $imagePath
      * @return mixed
@@ -77,9 +76,8 @@ class RestaurantApiProvider
     }
 
 
-
     /**
-     * @param $cuisines
+     * @param array $cuisines
      * @param $id
      * @return mixed
      */
@@ -101,7 +99,7 @@ class RestaurantApiProvider
      * @param $id
      * @return mixed
      */
-    public function showRestaurantReviews($id)
+    public function showReviews($id)
     {
         return Restaurant::findOrFail($id)->reviews->load('user');
     }
@@ -112,7 +110,7 @@ class RestaurantApiProvider
      */
     public function voteImage($voteData)
     {
-        $votes = Image::findOrFail($voteData->id)->restaurantVotes();
+        $votes = Image::findOrFail($voteData['id'])->restaurantVotes();
         $exist = $votes->where('user_id', auth()->user()->id)->count();
         // If vote already exist alter the value
         if ($exist) {
@@ -139,11 +137,17 @@ class RestaurantApiProvider
                 'status'  => 1,
             ]);
 
+//        foreach ($orderData->orderedFoods as $orderedFood) {
+//            $selected[] = New OrderedFood($orderedFood);
+//        }
+        $attachArray = array();
         foreach ($orderData->orderedFoods as $orderedFood) {
-            $selected[] = New OrderedFood($orderedFood);
+            $attachArray[ $orderedFood['food_id']]  = array('qty' => $orderedFood['qty']);
         }
 
-        return $order->orderedFoods()->saveMany($selected);
+        return $order->foods()->attach($attachArray);
+
+       // return $order->orderedFoods()->saveMany($selected);
 
     }
 
@@ -153,7 +157,6 @@ class RestaurantApiProvider
      */
     public function cancelOrder($order_id)
     {
-
         return Order::find($order_id)->where('user_id', auth()->user()->id)->update([
             'status' => 4
         ]);

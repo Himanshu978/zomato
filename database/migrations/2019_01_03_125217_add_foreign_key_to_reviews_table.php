@@ -27,7 +27,7 @@ class AddForeignKeyToReviewsTable extends Migration
     public function down()
     {
         Schema::table('reviews', function (Blueprint $table) {
-            //
+            $table->dropForeign(['restaurant_id']);
         });
     }
 }

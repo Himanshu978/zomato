@@ -39,18 +39,7 @@ class ReviewController extends Controller
      */
     public function store(CreateReviewRequest $request)
     {
-        return Review::store($request);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Review $review
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Review $review)
-    {
-        //
+        return Review::store($request->all());
     }
 
 
@@ -61,7 +50,7 @@ class ReviewController extends Controller
      */
     public function update(UpdateReviewRequest $request, $id)
     {
-        return Review::updateReview($request, $id);
+        return Review::update($request->all(), $id);
     }
 
 
@@ -71,9 +60,8 @@ class ReviewController extends Controller
      */
     public function destroy($id)
     {
-        return Review::deleteReview($id);
+        return Review::delete($id);
     }
-
 
 
 

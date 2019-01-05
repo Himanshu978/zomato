@@ -35,8 +35,6 @@ class CommentController extends Controller
     }
 
 
-
-
     /**
      * @param $id
      * @return mixed

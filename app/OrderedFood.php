@@ -19,16 +19,16 @@ class OrderedFood extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function order(){
-      return  $this->belongsTo(Order::class);
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function food(){
-        return  $this->belongsTo(Food::class);
-      }
+//    public function order(){
+//      return  $this->belongsTo(Order::class);
+//    }
+//
+//    /**
+//     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+//     */
+//    public function food(){
+//        return  $this->belongsTo(Food::class);
+//      }
 
 
 }

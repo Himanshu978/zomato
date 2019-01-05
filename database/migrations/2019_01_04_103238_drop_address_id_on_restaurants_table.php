@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddForeignKeyToRestaurantsTable extends Migration
+class DropAddressIdOnRestaurantsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,8 @@ class AddForeignKeyToRestaurantsTable extends Migration
     public function up()
     {
         Schema::table('restaurants', function (Blueprint $table) {
-            $table->foreign('address_id' )->references('id')->on('addresses');
-
+            $table->dropForeign(['address_id']);
+            $table->dropColumn(['address_id']);
         });
     }
 
@@ -27,7 +27,9 @@ class AddForeignKeyToRestaurantsTable extends Migration
     public function down()
     {
         Schema::table('restaurants', function (Blueprint $table) {
-            $table->dropForeign(['address_id']);
+
+            $table->unsignedInteger('address_id');
+            $table->foreign('address_id')->references('id')->on('addresses');
         });
     }
 }

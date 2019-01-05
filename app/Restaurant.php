@@ -14,12 +14,7 @@ class Restaurant extends Model
     /**
      * @var array
      */
-    protected $gaurded = ['id'];
-
-    /**
-     * @var array
-     */
-    protected $fillable = ['name', 'description', 'phone', 'opening', 'closing', 'address_id'];
+    protected $guarded = ['id'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -31,11 +26,22 @@ class Restaurant extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function address() {
-      return  $this->belongsTo(Address::class);
-    }
+//    public function address() {
+//      return  $this->belongsTo(Address::class);
+//    }
+
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
+     */
+    public function address()
+    {
+        return $this->morphOne(Address::class, 'addressable');
+    }
+
+
+    /**
+     * TODO: check relationship
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function cuisines() {

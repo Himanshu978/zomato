@@ -13,7 +13,7 @@ class CreateOrderedFoodsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ordered_foods', function (Blueprint $table) {
+        Schema::create('foods_orders', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('food_id');
             $table->unsignedInteger('order_id');

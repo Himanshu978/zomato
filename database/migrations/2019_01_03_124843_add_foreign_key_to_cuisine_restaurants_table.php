@@ -27,7 +27,7 @@ class AddForeignKeyToCuisineRestaurantsTable extends Migration
     public function down()
     {
         Schema::table('cuisine_restuarants', function (Blueprint $table) {
-            //
+            $table->dropForeign(['restaurant_id']);
         });
     }
 }

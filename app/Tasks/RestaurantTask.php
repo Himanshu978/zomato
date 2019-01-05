@@ -19,11 +19,17 @@ class RestaurantTask
 
         DB::beginTransaction();
         try {
-            $address_id = $this->createAddress($restaurantData->district_id, $restaurantData->street_address);
+          //  $address_id = $this->createAddress($restaurantData->district_id, $restaurantData->street_address);
 
-            $data = $this->setData($restaurantData, $address_id);
+            $data = $this->setData($restaurantData);
 
             $restaurant = Restaurant::create($data);
+
+            $restaurant->address()->create([
+                'street_address' => $restaurantData->street_address,
+                'district_id' => $restaurantData->district_id
+            ]);
+
 
             if ($restaurantData->image) {
                 $this->storeImage($restaurantData->image, $restaurant);
@@ -63,36 +69,21 @@ class RestaurantTask
         }
     }
 
-    /**
-     * @param $district_id
-     * @param $street_address
-     * @return mixed
-     */
-    private function createAddress($district_id, $street_address)
-    {
-        $address = District::findOrFail($district_id)
-                           ->addresses()->create([
-                'street_address' => $street_address
-            ]);
 
-        return $address->id;
-    }
 
     /**
      * @param $restaurantData
      * @param $address_id
      * @return array
      */
-    public function setData($restaurantData, $address_id)
+    public function setData($restaurantData)
     {
         return [
             'name'        => $restaurantData->name,
             'description' => $restaurantData->description,
             'phone'       => $restaurantData->phone,
             'opening'     => $restaurantData->opening,
-            'closing'     => $restaurantData->closing,
-            'address_id'  => $address_id,
-            'user_id'     => auth()->user()->id
+            'closing'     => $restaurantData->closing
         ];
     }
 }

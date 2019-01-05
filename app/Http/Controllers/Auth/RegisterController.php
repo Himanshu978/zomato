@@ -54,10 +54,10 @@ class RegisterController extends Controller
      */
     protected function create(RegisterRequest $data)
     {
-       $address_id = Address::create([
-            'street_address' => $data['street_address'],
-            'district_id' => $data['district_id']
-        ]);
+//       $address_id = Address::create([
+//            'street_address' => $data['street_address'],
+//            'district_id' => $data['district_id']
+//        ]);
 
         if(!$data['type']){
             $data['type'] = 1;
@@ -70,10 +70,13 @@ class RegisterController extends Controller
             'firstname' => $data['firstname'],
             'lastname' => $data['lastname'],
             'phone' => $data['phone'],
-            'address_id' => $address_id,
-            'address_id' => 1,
             'type' => $data['type'],
             'password' => Hash::make($data['password']),
+        ]);
+
+        $user->address()->create([
+            'street_address' => $data['street_address'],
+            'district_id' => $data['district_id']
         ]);
 
         $success['token'] =  $user->createToken('MyApp')-> accessToken;

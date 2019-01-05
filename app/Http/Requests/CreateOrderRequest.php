@@ -13,11 +13,13 @@ class CreateOrderRequest extends FormRequest
      */
     public function authorize()
     {
-        if(auth()->user()->type == 2){
-            return false;
-        }
-
         return true;
+
+//        if(auth()->user()->type == 2){
+//            return false;
+//        }
+//
+//        return true;
     }
 
     /**

@@ -37,14 +37,15 @@ class CommentApiProvider
      */
     public function create(CreateCommentRequest $request)
     {
+        $data             = $request->all();
         $comment          = new Comment();
-        $comment->content = $request->content;
+        $comment->content = $data['content'];
         $comment->user_id = auth()->user()->id;
 
         if ($request->type == 'review') {
-            return Review::findOrFail($request->id)->comments()->save($comment);
+            return Review::findOrFail($data['id'])->comments()->save($comment);
         } else if ($request->type == 'restaurant') {
-            return Image::findOrFail($request->id)->restaurantComments()->save($comment);
+            return Image::findOrFail($data['id'])->restaurantComments()->save($comment);
         }
 
     }
