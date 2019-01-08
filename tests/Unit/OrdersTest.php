@@ -83,6 +83,5 @@ class OrdersTest extends TestCase
         $this->assertEquals($data['status'], $responseData->orders[0]->status);
 
 
-
     }
 }

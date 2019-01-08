@@ -23,7 +23,6 @@ class RestaurantTest extends TestCase
     /** @test */
     public function it_gets_list_of_all_restaurants()
     {
-
         $restaurantsCount = 8;
 
         $faker = \Faker\Factory::create();

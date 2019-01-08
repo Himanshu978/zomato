@@ -22,8 +22,6 @@ Route::get('/districts/{state_id}', 'AppController@getDistricts');
 
 Route::get('/restaurants/image/{path}','RestaurantController@getImage');
 
-// Route::get('/restaurants','RestaurantController@index');
-
 
 Route::middleware(['auth:api'])->group(function () {
 
@@ -49,4 +47,5 @@ Route::middleware(['auth:api'])->group(function () {
     Route::post('/orders','RestaurantController@placeOrder');
     Route::get('/orders','UserController@myOrders');
     Route::delete('/orders/{id}','RestaurantController@cancelOrder');
+
 });
