@@ -83,4 +83,35 @@ class ReviewsTest extends TestCase
 
     }
 
+    /** @test */
+    public function it_creates_a_restaurant()
+    {
+        $user = factory(\App\User::class)->create([
+            'type' => 1
+        ]);
+
+        $faker = \Faker\Factory::create();
+
+        $restaurant = factory(\App\Restaurant::class)->create();
+
+        $data = [
+            'content'           => $faker->sentence,
+            'restaurant_id' => $restaurant->id
+        ];
+
+        $response = $this->actingAs($user, 'api')->post('http://zomato.test/api/reviews', $data);
+
+        $response->assertStatus(201);
+
+        $responseData = $response->getData();
+
+
+//        $this->assertEquals($data['name'], $responseData->name);
+//        $this->assertEquals($data['description'], $responseData->description);
+//        $this->assertEquals($data['phone'], $responseData->phone);
+//        $this->assertEquals($data['opening'], $responseData->opening);
+//        $this->assertEquals($data['closing'], $responseData->closing);
+
+    }
+
 }

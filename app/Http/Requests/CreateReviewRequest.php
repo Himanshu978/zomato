@@ -17,7 +17,9 @@ class CreateReviewRequest extends FormRequest
         if(auth()->user()->orders->where('restaurant_id',$request->restaurant_id )->count()){
             return true;
         }
-        return false;
+
+        return true;
+      //  return false;
     }
 
     /**
