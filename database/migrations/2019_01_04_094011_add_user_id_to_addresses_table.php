@@ -16,7 +16,7 @@ class AddUserIdToAddressesTable extends Migration
         Schema::table('addresses', function (Blueprint $table) {
          //   $table->unsignedInteger('user_id');
            // $table->foreign('user_id')->references('id')->on('users');
-            $table->dropColumn(['user_id']);
+          //  $table->dropColumn(['user_id']);
         });
     }
 
@@ -28,8 +28,8 @@ class AddUserIdToAddressesTable extends Migration
     public function down()
     {
         Schema::table('addresses', function (Blueprint $table) {
-            $table->dropForeign(['user_id']);
-            $table->dropColumn(['user_id']);
+      //     $table->dropForeign(['user_id']);
+        //    $table->dropColumn(['user_id']);
         });
     }
 }

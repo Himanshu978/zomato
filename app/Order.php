@@ -16,12 +16,7 @@ class Order extends Model
      */
     protected $guarded = ['id'];
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-//    public function orderedFoods() {
-//      return  $this->hasMany(OrderedFood::class);
-//    }
+
 
     public function foods() {
         return $this->belongsToMany(Food::class, 'foods_orders')->withPivot('qty')->withTimestamps();

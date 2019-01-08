@@ -19,7 +19,10 @@ Route::post('/login', 'Auth\LoginController@login');
 
 Route::get('/states', 'AppController@getStates');
 Route::get('/districts/{state_id}', 'AppController@getDistricts');
+
 Route::get('/restaurants/image/{path}','RestaurantController@getImage');
+
+// Route::get('/restaurants','RestaurantController@index');
 
 
 Route::middleware(['auth:api'])->group(function () {
@@ -39,11 +42,9 @@ Route::middleware(['auth:api'])->group(function () {
     Route::post('comments','CommentController@store');
 
     Route::post('/vote','VotingController@store');
-    Route::put('/profile/edit/{id}', 'UserController@update');
 
     Route::get('/restaurants/{id}/foods','FoodController@index');
     Route::post('/foods','FoodController@store');
-    Route::put('/foods','FoodController@update');
 
     Route::post('/orders','RestaurantController@placeOrder');
     Route::get('/orders','UserController@myOrders');

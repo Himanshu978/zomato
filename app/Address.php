@@ -27,7 +27,8 @@ class Address extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function district() {
+    public function district()
+    {
         return $this->belongsTo(District::class);
     }
 
@@ -37,5 +38,10 @@ class Address extends Model
     public function addressable()
     {
         return $this->morphTo();
+    }
+
+    public function restaurants()
+    {
+        return $this->belongsToMany(Restaurant::class);
     }
 }

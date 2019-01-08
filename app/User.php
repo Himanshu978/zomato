@@ -45,7 +45,7 @@ class User extends Authenticatable
      */
     public function address()
     {
-        return $this->morphOne(Address::class, 'addressable');
+        return $this->morphMany(Address::class, 'addressable');
     }
 
 
@@ -77,12 +77,6 @@ class User extends Authenticatable
        return $this->hasMany(Comment::class);
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
-     */
-    public function orderedFoods() {
-        return $this->hasManyThrough(OrderedFood::class,Order::class);
-    }
 
 
     //---------------

@@ -19,16 +19,10 @@ class Restaurant extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function foods() {
-      return  $this->hasMany(Food::class);
+    public function foods()
+    {
+        return $this->hasMany(Food::class);
     }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-//    public function address() {
-//      return  $this->belongsTo(Address::class);
-//    }
 
 
     /**
@@ -40,12 +34,15 @@ class Restaurant extends Model
     }
 
 
+
     /**
      * TODO: check relationship
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function cuisines() {
-      return  $this->belongsToMany(Cuisine::class,'cuisine_restaurants');
+    public function cuisines()
+    {
+        return $this->belongsToMany(Cuisine::class, 'cuisine_restaurants');
     }
 
     /**
@@ -59,14 +56,16 @@ class Restaurant extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function orders() {
+    public function orders()
+    {
         return $this->hasMany(Order::class);
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function reviews() {
+    public function reviews()
+    {
         return $this->hasMany(Review::class);
     }
 }
