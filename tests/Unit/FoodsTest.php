@@ -16,7 +16,6 @@ class FoodsTest extends TestCase
     /** @test */
     public function it_gets_all_foods_of_a_single_restaurant()
     {
-
         $restaurant = factory(Restaurant::class)->create();
 
         $faker = \Faker\Factory::create();

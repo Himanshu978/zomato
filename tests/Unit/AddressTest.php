@@ -44,7 +44,6 @@ class AddressTest extends TestCase
 
         $state =  factory(\App\State::class)->create();
 
-
         $data = [
             'name' => $faker->name,
             'state_id' => $state->id

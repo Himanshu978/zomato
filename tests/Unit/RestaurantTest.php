@@ -123,13 +123,43 @@ class RestaurantTest extends TestCase
 //    }
 
     /** @test */
-//    pubic function it_creates_the_restaurant()
-//    {
-//
-//        $restaurant = factory(Restaurant::class)->create();
-//
-//
-//    }
+    public function it_creates_a_restaurant()
+    {
+        $user = factory(\App\User::class)->create([
+            'type' => 2
+        ]);
+
+        $faker = \Faker\Factory::create();
+
+        $district = factory(\App\District::class)->create();
+
+        $data = [
+            'name'           => 'ooaooaoa',
+            'description'    => $faker->text,
+            'phone'          => '922342342232',
+            'opening'        => $faker->time(),
+            'closing'        => $faker->time(),
+            'user_id'        => $user->id,
+            'street_address' => $faker->word,
+            'district_id'    => $district->id,
+            'image'          => '',
+            'zip'            => '121212'
+        ];
+
+        $response = $this->actingAs($user, 'api')->post('http://zomato.test/api/restaurants', $data);
+
+        $response->assertStatus(201);
+
+        $responseData = $response->getData();
+
+
+        $this->assertEquals($data['name'], $responseData->name);
+        $this->assertEquals($data['description'], $responseData->description);
+        $this->assertEquals($data['phone'], $responseData->phone);
+        $this->assertEquals($data['opening'], $responseData->opening);
+        $this->assertEquals($data['closing'], $responseData->closing);
+
+    }
 
     /**  */
     public function it_uploads_the_image_of_the_restaurant()

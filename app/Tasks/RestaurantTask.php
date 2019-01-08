@@ -3,7 +3,6 @@
 namespace App\Tasks;
 
 
-
 use App\Restaurant;
 use App\District;
 use DB;
@@ -19,7 +18,7 @@ class RestaurantTask
 
         DB::beginTransaction();
         try {
-          //  $address_id = $this->createAddress($restaurantData->district_id, $restaurantData->street_address);
+            //  $address_id = $this->createAddress($restaurantData->district_id, $restaurantData->street_address);
 
             $data = $this->setData($restaurantData);
 
@@ -27,7 +26,8 @@ class RestaurantTask
 
             $restaurant->address()->create([
                 'street_address' => $restaurantData->street_address,
-                'district_id' => $restaurantData->district_id
+                'district_id'    => $restaurantData->district_id,
+                'zip'            => $restaurantData->zip
             ]);
 
 
@@ -70,7 +70,6 @@ class RestaurantTask
     }
 
 
-
     /**
      * @param $restaurantData
      * @param $address_id
@@ -83,7 +82,11 @@ class RestaurantTask
             'description' => $restaurantData->description,
             'phone'       => $restaurantData->phone,
             'opening'     => $restaurantData->opening,
-            'closing'     => $restaurantData->closing
+            'closing'     => $restaurantData->closing,
+            'user_id'     => $restaurantData->user_id,
+
         ];
     }
+
+
 }
