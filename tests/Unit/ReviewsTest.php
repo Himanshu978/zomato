@@ -84,7 +84,7 @@ class ReviewsTest extends TestCase
     }
 
     /** @test */
-    public function it_creates_a_restaurant()
+    public function it_creates_a_review_on_the_restaurant()
     {
         $user = factory(\App\User::class)->create([
             'type' => 1
@@ -95,7 +95,7 @@ class ReviewsTest extends TestCase
         $restaurant = factory(\App\Restaurant::class)->create();
 
         $data = [
-            'content'           => $faker->sentence,
+            'content'       => $faker->sentence,
             'restaurant_id' => $restaurant->id
         ];
 
@@ -106,12 +106,26 @@ class ReviewsTest extends TestCase
         $responseData = $response->getData();
 
 
-//        $this->assertEquals($data['name'], $responseData->name);
-//        $this->assertEquals($data['description'], $responseData->description);
-//        $this->assertEquals($data['phone'], $responseData->phone);
-//        $this->assertEquals($data['opening'], $responseData->opening);
-//        $this->assertEquals($data['closing'], $responseData->closing);
+        $this->assertEquals($data['content'], $responseData->content);
 
+    }
+
+    /** @test */
+    public function it_deletes_a_review()
+    {
+        $user = factory(\App\User::class)->create([
+            'type' => 1
+        ]);
+
+        $review = factory(\App\Review::class)->create([
+            'user_id' => $user->id
+        ]);
+        
+        $faker = \Faker\Factory::create();
+
+        $response = $this->actingAs($user, 'api')->delete('http://zomato.test/api/reviews/'.$review->id);
+
+        $response->assertStatus(200);
     }
 
 }

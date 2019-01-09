@@ -21,16 +21,15 @@ class FoodsTest extends TestCase
         $faker = \Faker\Factory::create();
 
         $data = [
-            'name' => $faker->name,
+            'name'          => $faker->name,
             'restaurant_id' => $restaurant->id,
-            'cuisine_id' => function () {
+            'cuisine_id'    => function () {
                 return factory(\App\Cuisine::class)->create()->id;
             },
-            'price' => $faker->randomNumber(),
-            'description' => $faker->text,
+            'price'         => $faker->randomNumber(),
+            'description'   => $faker->text,
         ];
 
-//       $foodsCount = 5;
 
         factory(\App\Food::class)->create($data);
 
@@ -69,4 +68,40 @@ class FoodsTest extends TestCase
         $this->assertEquals($data['description'], $responseData->foods[0]->description);
 
     }
+
+
+    /** @test */
+    public function it_creates_the_food_for_the_restaurant()
+    {
+        $user = factory(\App\User::class)->create([
+            'type' => 2
+        ]);
+
+        $faker = \Faker\Factory::create();
+
+        $restaurant = factory(\App\Restaurant::class)->create();
+        $cuisine = factory(\App\Cuisine::class)->create();
+
+        $data = [
+            'name' => $faker->name,
+            'restaurant_id' => $restaurant->id,
+            'cuisine_id' => $cuisine->id,
+            'price' => $faker->randomNumber(),
+            'description' => $faker->text
+        ];
+
+        $response = $this->actingAs($user, 'api')->post('http://zomato.test/api/foods', $data);
+
+        $response->assertStatus(201);
+
+        $responseData = $response->getData();
+
+        $this->assertEquals($data['name'], $responseData->name);
+        $this->assertEquals($data['price'], $responseData->price);
+        $this->assertEquals($data['description'], $responseData->description);
+        $this->assertEquals($data['cuisine_id'], $responseData->cuisine_id);
+        $this->assertEquals($data['restaurant_id'], $responseData->restaurant_id);
+
+    }
+
 }

@@ -13,7 +13,7 @@ class CreateRestaurantRequest extends FormRequest
      */
     public function authorize()
     {
-        // return true is user type is of restaurant
+        // return true if user type is of restaurant
         if(auth()->user()->type == 2){
             return true;
         }

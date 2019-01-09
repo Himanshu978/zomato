@@ -36,8 +36,8 @@ Route::middleware(['auth:api'])->group(function () {
     Route::put('/reviews/{id}','ReviewController@update');
     Route::delete('/reviews/{id}','ReviewController@destroy');
 
-    Route::delete('comments/{id}', 'CommentController@destroy');
-    Route::post('comments','CommentController@store');
+    Route::delete('/comments/{id}', 'CommentController@destroy');
+    Route::post('/comments','CommentController@store');
 
     Route::post('/vote','VotingController@store');
 

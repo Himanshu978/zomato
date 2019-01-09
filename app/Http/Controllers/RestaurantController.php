@@ -77,7 +77,7 @@ class RestaurantController extends Controller
      */
     public function placeOrder(CreateOrderRequest $request)
     {
-        return Restaurant::placeOrder($request);
+        return Restaurant::placeOrder($request->all());
     }
 
 

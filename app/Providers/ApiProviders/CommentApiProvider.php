@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers\Api_Providers;
+namespace App\Providers\ApiProviders;
 
 use App\Comment;
 use App\Http\Requests\CreateCommentRequest;
@@ -32,22 +32,21 @@ class CommentApiProvider
     }
 
     /**
-     * @param CreateCommentRequest $request
+     * @param array $data
      * @return mixed
      */
-    public function create(CreateCommentRequest $request)
+    public function create($data)
     {
-        $data             = $request->all();
         $comment          = new Comment();
         $comment->content = $data['content'];
         $comment->user_id = auth()->user()->id;
 
-        if ($request->type == 'review') {
+        if ($data['type'] == 'review') {
             return Review::findOrFail($data['id'])->comments()->save($comment);
-        } else if ($request->type == 'restaurant') {
+
+        } else if ($data['type'] == 'restaurant') {
             return Image::findOrFail($data['id'])->restaurantComments()->save($comment);
         }
-
     }
 
     /**

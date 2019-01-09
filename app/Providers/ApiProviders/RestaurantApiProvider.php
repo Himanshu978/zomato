@@ -125,28 +125,24 @@ class RestaurantApiProvider
     }
 
     /**
-     * @param $orderData
+     * @param Array $orderData
      * @return mixed
      */
     public function placeOrder($orderData)
     {
-        $order = Restaurant::findOrFail($orderData->restaurant_id)
+        $order = Restaurant::findOrFail($orderData['restaurant_id'])
                            ->orders()->create([
                 'user_id' => auth()->user()->id,
                 'status'  => 1,
             ]);
 
-//        foreach ($orderData->orderedFoods as $orderedFood) {
-//            $selected[] = New OrderedFood($orderedFood);
-//        }
         $attachArray = array();
-        foreach ($orderData->orderedFoods as $orderedFood) {
-            $attachArray[ $orderedFood['food_id']]  = array('qty' => $orderedFood['qty']);
+        foreach ($orderData['orderedFoods'] as $orderedFood) {
+            $attachArray[$orderedFood['food_id']]  = array('qty' => $orderedFood['qty']);
         }
 
         return $order->foods()->attach($attachArray);
 
-       // return $order->orderedFoods()->saveMany($selected);
     }
 
     /**

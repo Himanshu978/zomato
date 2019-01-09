@@ -17,11 +17,9 @@ class OrdersTest extends TestCase
     {
         $user = factory(\App\User::class)->create();
 
-       // $ordersCount = 5;
-
-        $data =[
-            'user_id' => $user->id,
-            'status' => 'pending',
+        $data = [
+            'user_id'       => $user->id,
+            'status'        => 'pending',
             'restaurant_id' => function () {
                 return factory(\App\Restaurant::class)->create()->id;
             },
@@ -82,6 +80,49 @@ class OrdersTest extends TestCase
         $this->assertEquals($data['user_id'], $responseData->orders[0]->user_id);
         $this->assertEquals($data['status'], $responseData->orders[0]->status);
 
+    }
+
+    /** @test */
+    public function it_places_an_order()
+    {
+        $user = factory(\App\User::class)->create();
+
+        $restaurant = factory(\App\Restaurant::class)->create();
+
+        $food = factory(\App\Food::class)->create([
+            'restaurant_id' => $restaurant->id
+        ]);
+
+        $data = [
+            'restaurant_id' => $restaurant->id,
+            'orderedFoods'  => [
+                '0' => [
+                    'food_id' => $food->id,
+                    'qty'     => 2,
+                ],
+            ]
+        ];
+
+        $response = $this->actingAs($user, 'api')->post('http://zomato.test/api/orders', $data);
+
+        $response->assertStatus(200);
+    }
+
+
+    /** @test */
+    public function it_cancels_an_order()
+    {
+        $user = factory(\App\User::class)->create();
+
+        $order = factory(\App\Order::class)->create([
+            'user_id' => $user->id
+        ]);
+
+        $response = $this->actingAs($user, 'api')->delete('http://zomato.test/api/orders/'.$order->id);
+
+        $response->assertStatus(200);
 
     }
+
+
 }
