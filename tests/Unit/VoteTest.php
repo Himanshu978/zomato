@@ -7,17 +7,13 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class VoteTest extends TestCase
+class VoteTest extends TestSetUp
 {
     use DatabaseTransactions;
 
     /** @test */
     public function it_toggles_the_like_on_the_review()
     {
-        $user = factory(\App\User::class)->create([
-            'type' => 1
-        ]);
-
         $review = factory(\App\Review::class)->create();
 
         $data = [
@@ -25,11 +21,11 @@ class VoteTest extends TestCase
             'id'   => $review->id
         ];
 
-        $response = $this->actingAs($user, 'api')->post('http://zomato.test/api/vote', $data);
+        $response = $this->acting_as_user->post($this->url.'vote', $data);
 
         $response->assertStatus(201);
 
-        $response = $this->actingAs($user, 'api')->post('http://zomato.test/api/vote', $data);
+        $response = $this->acting_as_user->post($this->url.'vote', $data);
 
         $response->assertStatus(200);
 
@@ -39,15 +35,11 @@ class VoteTest extends TestCase
     /** @test */
     public function it_toggles_the_like_on_the_image_of_restaurant()
     {
-        $user = factory(\App\User::class)->create([
-            'type' => 1
-        ]);
 
         $restaurant = factory(\App\Restaurant::class)->create();
 
-        $image = factory(\App\Image::class)->create([
-            'imageable_id'   => $restaurant->id,
-            'imageable_type' => 'restaurant'
+        $image = $restaurant->image()->create([
+            'url' => $this->faker->image('public',400,300)
         ]);
 
         $data = [
@@ -55,11 +47,11 @@ class VoteTest extends TestCase
             'id'   => $image->id
         ];
 
-        $response = $this->actingAs($user, 'api')->post('http://zomato.test/api/vote', $data);
+        $response = $this->acting_as_user->post($this->url.'vote', $data);
 
         $response->assertStatus(201);
 
-        $response = $this->actingAs($user, 'api')->post('http://zomato.test/api/vote', $data);
+        $response = $this->acting_as_user->post($this->url.'vote', $data);
 
         $response->assertStatus(200);
 

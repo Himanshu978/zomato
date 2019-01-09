@@ -9,56 +9,33 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class ReviewsTest extends TestCase
+class ReviewsTest extends TestSetUp
 {
 
     use DatabaseTransactions;
 
+
     /** @test */
     public function it_gets_all_reviews_of_a_single_restaurant()
     {
-        $faker      = \Faker\Factory::create();
         $restaurant = factory(Restaurant::class)->create();
 
-        $reviewsCount = 5;
-
         $data = [
-            'content'       => $faker->text,
+            'content'       => $this->faker->text,
             'restaurant_id' => $restaurant->id,
         ];
 
         $review = factory(\App\Review::class)->create($data);
 
-        $user = factory(\App\User::class)->create();
 
-        $response = $this->actingAs($user, 'api')->get('http://zomato.test/api/reviews/' . $restaurant->id);
+
+        $response =  $this->acting_as_user->get( $this->url.'reviews/' . $restaurant->id);
 
         $response->assertStatus(200);
 
-//                 ->assertJsonStructure([
-//                     '*' => [
-//                         'id',
-//                         'content',
-//                         'user_id',
-//                         'restaurant_id',
-//                         'created_at',
-//                         'updated_at',
-//                         'comments',
-//                         'user'  => [
-//                             'id',
-//                             'username',
-//                             'email',
-//                             'age',
-//                             'firstname',
-//                             'lastname',
-//                             'phone',
-//                             'type'
-//                         ],
-//                         'votes' => []
-//                     ]
-//                 ]);
         $responseData = $response->getData()[0];
 
+        $this->assertNotEmpty($responseData);
         $this->assertEquals($data['content'], $responseData->content, 'Review Content did not match!');
 
     }
@@ -67,17 +44,13 @@ class ReviewsTest extends TestCase
     /** @test */
     public function it_updates_the_review()
     {
-        $faker = \Faker\Factory::create();
-
-        $user = factory(\App\User::class)->create();
-
         $data = [
-            'content' => $faker->text,
+            'content' => $this->faker->text,
         ];
 
         $review = factory(\App\Review::class)->create($data);
 
-        $update = $this->actingAs($user, 'api')->get('http://zomato.test/api/reviews/' . $review->id);
+        $update =  $this->acting_as_user->get($this->url.'reviews/' . $review->id);
 
         $this->assertEquals($data['content'], $review->content);
 
@@ -86,26 +59,20 @@ class ReviewsTest extends TestCase
     /** @test */
     public function it_creates_a_review_on_the_restaurant()
     {
-        $user = factory(\App\User::class)->create([
-            'type' => 1
-        ]);
-
-        $faker = \Faker\Factory::create();
-
         $restaurant = factory(\App\Restaurant::class)->create();
 
         $data = [
-            'content'       => $faker->sentence,
+            'content'       => $this->faker->sentence,
             'restaurant_id' => $restaurant->id
         ];
 
-        $response = $this->actingAs($user, 'api')->post('http://zomato.test/api/reviews', $data);
+        $response =  $this->acting_as_user->post($this->url.'reviews', $data);
 
         $response->assertStatus(201);
 
         $responseData = $response->getData();
 
-
+        $this->assertNotEmpty($responseData);
         $this->assertEquals($data['content'], $responseData->content);
 
     }
@@ -113,19 +80,14 @@ class ReviewsTest extends TestCase
     /** @test */
     public function it_deletes_a_review()
     {
-        $user = factory(\App\User::class)->create([
-            'type' => 1
-        ]);
-
         $review = factory(\App\Review::class)->create([
-            'user_id' => $user->id
+            'user_id' =>  $this->user->id
         ]);
-        
-        $faker = \Faker\Factory::create();
 
-        $response = $this->actingAs($user, 'api')->delete('http://zomato.test/api/reviews/'.$review->id);
+        $response =  $this->acting_as_user->delete($this->url.'reviews/'.$review->id);
 
         $response->assertStatus(200);
+
     }
 
 }

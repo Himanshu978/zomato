@@ -8,31 +8,23 @@ use Tests\TestCase;
 use Faker\Generator as Faker;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\File;
 
-class RestaurantTest extends TestCase
+class RestaurantTest extends TestSetUp
 {
 
     use DatabaseTransactions;
-
-    public function setUp()
-    {
-        parent::setUp();
-    }
 
 
     /** @test */
     public function it_gets_list_of_all_restaurants()
     {
-        $restaurantsCount = 8;
-
-        $faker = \Faker\Factory::create();
-
         $data = [
-            'name'        => $faker->name,
-            'description' => $faker->text,
-            'phone'       => $faker->phoneNumber,
-            'opening'     => $faker->time(),
-            'closing'     => $faker->time(),
+            'name'        => $this->faker->name,
+            'description' => $this->faker->text,
+            'phone'       => $this->faker->phoneNumber,
+            'opening'     => $this->faker->time(),
+            'closing'     => $this->faker->time(),
             'user_id'     => function () {
                 return factory(\App\User::class)->create()->id;
             },
@@ -40,45 +32,31 @@ class RestaurantTest extends TestCase
 
         $restaurants = factory(Restaurant::class)->create($data);
 
-        $user = factory(\App\User::class)->create();
-
-        $response = $this->actingAs($user, 'api')->get('http://zomato.test/api/restaurants');
+        $response = $this->acting_as_user->get($this->url . 'restaurants');
 
         $response->assertStatus(200);
-//                 ->assertJsonStructure([
-//                     '*' => [
-//                         'name',
-//                         'description',
-//                         'opening',
-//                         'closing',
-//                         'phone',
-//                         'user_id'
-//                     ]
-//                 ]);
 
         $responseData = $response->getData()[0];
 
-//      $this->assertEquals($restaurantsCount, count($response->getData()));
+        $this->assertNotEmpty($responseData);
         $this->assertEquals($data['name'], $responseData->name);
         $this->assertEquals($data['description'], $responseData->description);
         $this->assertEquals($data['phone'], $responseData->phone);
         $this->assertEquals($data['opening'], $responseData->opening);
         $this->assertEquals($data['closing'], $responseData->closing);
 
-
     }
 
     /** @test */
     public function it_gets_a_single_restaurant()
     {
-        $faker = \Faker\Factory::create();
 
         $data = [
-            'name'        => $faker->name,
-            'description' => $faker->text,
-            'phone'       => $faker->phoneNumber,
-            'opening'     => $faker->time(),
-            'closing'     => $faker->time(),
+            'name'        => $this->faker->name,
+            'description' => $this->faker->text,
+            'phone'       => $this->faker->phoneNumber,
+            'opening'     => $this->faker->time(),
+            'closing'     => $this->faker->time(),
             'user_id'     => function () {
                 return factory(\App\User::class)->create()->id;
             },
@@ -86,25 +64,13 @@ class RestaurantTest extends TestCase
 
         $restaurant = factory(Restaurant::class)->create($data);
 
-        $user = factory(\App\User::class)->create();
-
-        $response = $this->actingAs($user, 'api')->get('http://zomato.test/api/restaurants/' . $restaurant->id);
+        $response = $this->acting_as_user->get($this->url . 'restaurants/' . $restaurant->id);
 
         $response->assertStatus(200);
-//                 ->assertJsonStructure([
-//                     'name',
-//                     'description',
-//                     'opening',
-//                     'closing',
-//                     'phone',
-//                     'user_id',
-//                     'cuisines',
-//                     'address',
-//                     'image'
-//                 ]);
 
         $responseData = $response->getData();
 
+        $this->assertNotEmpty($responseData);
         $this->assertEquals($data['name'], $responseData->name);
         $this->assertEquals($data['description'], $responseData->description);
         $this->assertEquals($data['phone'], $responseData->phone);
@@ -114,45 +80,36 @@ class RestaurantTest extends TestCase
     }
 
     /** @test */
-//    public function it_gets_the_image_of_the_restaurant()
-//    {
-//        $restaurant = factory(Restaurant::class)->create();
-//
-//        $user = factory(\App\User::class)->create();
-//
-//    }
-
-    /** @test */
     public function it_creates_a_restaurant()
     {
-        $user = factory(\App\User::class)->create([
-            'type' => 2
-        ]);
-
-        $faker = \Faker\Factory::create();
 
         $district = factory(\App\District::class)->create();
 
+        $image_path = $this->faker->image('public', 400, 300);
+        $image_name = explode('/', $image_path)[1];
+
+        $image = File::get(public_path($image_name));
+
         $data = [
             'name'           => 'ooaooaoa',
-            'description'    => $faker->text,
+            'description'    => $this->faker->text,
             'phone'          => '922342342232',
-            'opening'        => $faker->time(),
-            'closing'        => $faker->time(),
-            'user_id'        => $user->id,
-            'street_address' => $faker->word,
+            'opening'        => $this->faker->time(),
+            'closing'        => $this->faker->time(),
+            'user_id'        => $this->user->id,
+            'street_address' => $this->faker->word,
             'district_id'    => $district->id,
-            'image'          => '',
-            'zip'            => '121212'
+            'zip'            => '121212',
+            'image'          => 'data:image/jpeg;base64,' . base64_encode($image)
         ];
 
-        $response = $this->actingAs($user, 'api')->post('http://zomato.test/api/restaurants', $data);
+        $response = $this->acting_as_user->post($this->url . 'restaurants', $data);
 
         $response->assertStatus(201);
 
         $responseData = $response->getData();
 
-
+        $this->assertNotEmpty($responseData);
         $this->assertEquals($data['name'], $responseData->name);
         $this->assertEquals($data['description'], $responseData->description);
         $this->assertEquals($data['phone'], $responseData->phone);
@@ -161,21 +118,19 @@ class RestaurantTest extends TestCase
 
     }
 
-    /**  */
-    public function it_uploads_the_image_of_the_restaurant()
+
+    /** @test */
+    public function it_gets_the_image_of_the_restaurant()
     {
         $restaurant = factory(Restaurant::class)->create();
 
-        $user = factory(\App\User::class)->create();
-
-        $image = factory(\App\Image::class)->create([
-            'imageable_id'   => $restaurant->id,
-            'imageable_type' => 'App\Restaurant'
+        $image = $restaurant->image()->create([
+            'url' => $this->faker->image('public',400,300)
         ]);
 
         $image_name = explode('/', $image->url)[1];
 
-        $response = $this->actingAs($user, 'api')->get('http://zomato.test/api/restaurants/image/' . $image_name);
+        $response = $this->acting_as_user->get($this->url . 'restaurants/image/' . $image_name);
 
         $response->assertStatus(200);
 

@@ -7,7 +7,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class OrdersTest extends TestCase
+class OrdersTest extends TestSetUp
 {
     use DatabaseTransactions;
 
@@ -15,10 +15,8 @@ class OrdersTest extends TestCase
     /** @test */
     public function it_gets_list_of_all_orders_placed_by_the_user()
     {
-        $user = factory(\App\User::class)->create();
-
         $data = [
-            'user_id'       => $user->id,
+            'user_id'       => $this->user->id,
             'status'        => 'pending',
             'restaurant_id' => function () {
                 return factory(\App\Restaurant::class)->create()->id;
@@ -27,56 +25,13 @@ class OrdersTest extends TestCase
 
         $order = factory(\App\Order::class)->create($data);
 
-        $response = $this->actingAs($user, 'api')->get('http://zomato.test/api/orders');
+        $response = $this->acting_as_user->get($this->url . 'orders');
 
         $response->assertStatus(200);
 
         $responseData = $response->getData();
-//                 ->assertJsonStructure([
-//                     'username',
-//                     'email',
-//                     'age',
-//                     'firstname',
-//                     'lastname',
-//                     'phone',
-//                     'type',
-//                     'updated_at',
-//                     'created_at',
-//                     'id',
-//                     'orders' => [
-//                         '*' => [
-//                             'id',
-//                             'user_id',
-//                             'status',
-//                             'restaurant_id',
-//                             'created_at',
-//                             'updated_at',
-//                             'foods'      => [
-//                                 '*' => [
-//                                     'id',
-//                                     'name',
-//                                     'restaurant_id',
-//                                     'cuisine_id',
-//                                     'price',
-//                                     'description',
-//                                     'created_at',
-//                                     'updated_at'
-//                                 ]
-//                             ],
-//                             'restaurant' => [
-//                                 'id',
-//                                 'name',
-//                                 'description',
-//                                 'phone',
-//                                 'opening',
-//                                 'closing',
-//                                 'created_at',
-//                                 'updated_at',
-//                                 'user_id'
-//                             ]
-//                         ]
-//                     ]
-//                 ]);
+
+        $this->assertNotEmpty($responseData);
         $this->assertEquals($data['user_id'], $responseData->orders[0]->user_id);
         $this->assertEquals($data['status'], $responseData->orders[0]->status);
 
@@ -85,8 +40,6 @@ class OrdersTest extends TestCase
     /** @test */
     public function it_places_an_order()
     {
-        $user = factory(\App\User::class)->create();
-
         $restaurant = factory(\App\Restaurant::class)->create();
 
         $food = factory(\App\Food::class)->create([
@@ -103,7 +56,7 @@ class OrdersTest extends TestCase
             ]
         ];
 
-        $response = $this->actingAs($user, 'api')->post('http://zomato.test/api/orders', $data);
+        $response = $this->acting_as_user->post($this->url . 'orders', $data);
 
         $response->assertStatus(200);
     }
@@ -112,17 +65,22 @@ class OrdersTest extends TestCase
     /** @test */
     public function it_cancels_an_order()
     {
-        $user = factory(\App\User::class)->create();
-
         $order = factory(\App\Order::class)->create([
-            'user_id' => $user->id
+            'user_id' => $this->user->id
         ]);
 
-        $response = $this->actingAs($user, 'api')->delete('http://zomato.test/api/orders/'.$order->id);
+        $response = $this->acting_as_user->delete($this->url . 'orders/' . $order->id);
 
         $response->assertStatus(200);
 
     }
 
+
+    /** @test */
+    public function it_checks_no_user_can_see_orders_from_other_users()
+    {
+
+
+    }
 
 }

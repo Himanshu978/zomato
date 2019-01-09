@@ -8,9 +8,10 @@ use App\Restaurant;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class FoodsTest extends TestCase
+class FoodsTest extends TestSetUp
 {
     use DatabaseTransactions;
+
 
 
     /** @test */
@@ -18,51 +19,25 @@ class FoodsTest extends TestCase
     {
         $restaurant = factory(Restaurant::class)->create();
 
-        $faker = \Faker\Factory::create();
-
         $data = [
-            'name'          => $faker->name,
+            'name'          => $this->faker->name,
             'restaurant_id' => $restaurant->id,
             'cuisine_id'    => function () {
                 return factory(\App\Cuisine::class)->create()->id;
             },
-            'price'         => $faker->randomNumber(),
-            'description'   => $faker->text,
+            'price'         => $this->faker->randomNumber(),
+            'description'   => $this->faker->text,
         ];
-
 
         factory(\App\Food::class)->create($data);
 
-        $user = factory(\App\User::class)->create();
-
-        $response = $this->actingAs($user, 'api')->get('http://zomato.test/api/restaurants/' . $restaurant->id . '/foods');
+        $response = $this->acting_as_user->get($this->url . 'restaurants/' . $restaurant->id . '/foods');
 
         $response->assertStatus(200);
-//                 ->assertJsonStructure([
-//                         'id',
-//                         'name',
-//                         'user_id',
-//                         'description',
-//                         'phone',
-//                         'opening',
-//                         'closing',
-//                         'updated_at',
-//                         'user_id',
-//                         'foods' => [
-//                             '*' => [
-//                                 'id',
-//                                 'name',
-//                                 'restaurant_id',
-//                                 'cuisine_id',
-//                                 'price',
-//                                 'description',
-//                                 'created_at',
-//                                 'updated_at'
-//                             ]
-//                         ]
-//                 ]);
+
         $responseData = $response->getData();
 
+        $this->assertNotEmpty($responseData);
         $this->assertEquals($data['name'], $responseData->foods[0]->name);
         $this->assertEquals($data['price'], $responseData->foods[0]->price);
         $this->assertEquals($data['description'], $responseData->foods[0]->description);
@@ -73,29 +48,25 @@ class FoodsTest extends TestCase
     /** @test */
     public function it_creates_the_food_for_the_restaurant()
     {
-        $user = factory(\App\User::class)->create([
-            'type' => 2
-        ]);
-
-        $faker = \Faker\Factory::create();
 
         $restaurant = factory(\App\Restaurant::class)->create();
-        $cuisine = factory(\App\Cuisine::class)->create();
+        $cuisine    = factory(\App\Cuisine::class)->create();
 
         $data = [
-            'name' => $faker->name,
+            'name'          => $this->faker->name,
             'restaurant_id' => $restaurant->id,
-            'cuisine_id' => $cuisine->id,
-            'price' => $faker->randomNumber(),
-            'description' => $faker->text
+            'cuisine_id'    => $cuisine->id,
+            'price'         => $this->faker->randomNumber(),
+            'description'   => $this->faker->text
         ];
 
-        $response = $this->actingAs($user, 'api')->post('http://zomato.test/api/foods', $data);
+        $response = $this->acting_as_user->post($this->url . 'foods', $data);
 
         $response->assertStatus(201);
 
         $responseData = $response->getData();
 
+        $this->assertNotEmpty($responseData);
         $this->assertEquals($data['name'], $responseData->name);
         $this->assertEquals($data['price'], $responseData->price);
         $this->assertEquals($data['description'], $responseData->description);

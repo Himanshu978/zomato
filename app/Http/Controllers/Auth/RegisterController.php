@@ -45,44 +45,46 @@ class RegisterController extends Controller
     }
 
 
-
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param LoginRequest $data
+     * @param RegisterRequest $data
      * @return \App\User
      */
     protected function create(RegisterRequest $data)
     {
-//       $address_id = Address::create([
-//            'street_address' => $data['street_address'],
-//            'district_id' => $data['district_id']
-//        ]);
-
-        if(!$data['type']){
+        //
+        if (!$data['type']) {
             $data['type'] = 1;
         }
 
-        $user =  User::create([
-            'username' => $data['username'],
-            'email' => $data['email'],
-            'age' => $data['age'],
+        $user = User::create([
+            'username'  => $data['username'],
+            'email'     => $data['email'],
+            'age'       => $data['age'],
             'firstname' => $data['firstname'],
-            'lastname' => $data['lastname'],
-            'phone' => $data['phone'],
-            'type' => $data['type'],
-            'password' => Hash::make($data['password']),
+            'lastname'  => $data['lastname'],
+            'phone'     => $data['phone'],
+            'type'      => $data['type'],
+            'password'  => Hash::make($data['password']),
         ]);
 
-        $user->address()->create([
+
+
+         $user->address()->create([
             'street_address' => $data['street_address'],
-            'district_id' => $data['district_id']
+            'district_id'  => $data['district_id'],
+            'zip' => $data['zip']
         ]);
 
-        $success['token'] =  $user->createToken('MyApp')-> accessToken;
-        $success['name'] =  $user->username;
+        // $success = [];
 
-        return response()->json(['success'=>$success], $this-> successStatus);
+//       $success['token'] = $user->createToken('MyApp')->accessToken;
+
+        $success['name']  = $user->username;
+
+
+        return response()->json(['success' => $success], $this->successStatus);
 
     }
 }

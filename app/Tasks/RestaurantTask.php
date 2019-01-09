@@ -18,7 +18,6 @@ class RestaurantTask
 
         DB::beginTransaction();
         try {
-            //  $address_id = $this->createAddress($restaurantData->district_id, $restaurantData->street_address);
 
             $data = $this->setData($restaurantData);
 

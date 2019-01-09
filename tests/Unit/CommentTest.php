@@ -8,35 +8,31 @@ use App\Restaurant;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class CommentTest extends TestCase
+class CommentTest extends TestSetUp
 {
     use DatabaseTransactions;
+
 
     /** @test */
     public function it_creates_a_new_comment_on_review()
     {
         $review = factory(\App\Review::class)->create();
 
-        $faker = \Faker\Factory::create();
-
         $data = [
-            'content' => $faker->name,
+            'content' => $this->faker->name,
             'id'      => $review->id,
             'type'    => 'review'
         ];
 
-        $user = factory(\App\User::class)->create([
-            'type' => 1
-        ]);
-
-        $response = $this->actingAs($user, 'api')->post('http://zomato.test/api/comments', $data);
-
+        $response = $this->acting_as_user->post($this->url . 'comments', $data);
 
         $response->assertStatus(201);
 
         $responseData = $response->getData();
 
+        $this->assertNotEmpty($responseData);
         $this->assertEquals($data['content'], $responseData->content);
+        $this->assertEquals($data['id'], $responseData->commenteable_id);
 
     }
 
@@ -46,29 +42,23 @@ class CommentTest extends TestCase
     {
         $restaurant = factory(\App\Restaurant::class)->create();
 
-        $image = factory(\App\Image::class)->create([
-            'imageable_id'   => $restaurant->id,
-            'imageable_type' => 'restaurant'
+        $image = $restaurant->image()->create([
+            'url' => $this->faker->image('public',400,300)
         ]);
 
-        $faker = \Faker\Factory::create();
-
         $data = [
-            'content' => $faker->name,
+            'content' => $this->faker->name,
             'id'      => $image->id,
             'type'    => 'restaurant'
         ];
 
-        $user = factory(\App\User::class)->create([
-            'type' => 1
-        ]);
-
-        $response = $this->actingAs($user, 'api')->post('http://zomato.test/api/comments', $data);
+        $response = $this->acting_as_user->post($this->url . 'comments', $data);
 
         $response->assertStatus(201);
 
         $responseData = $response->getData();
 
+        $this->assertNotEmpty($responseData);
         $this->assertEquals($data['content'], $responseData->content);
 
     }
@@ -77,15 +67,11 @@ class CommentTest extends TestCase
     /** @test */
     public function it_deletes_a_comment_on_the_review()
     {
-        $user = factory(\App\User::class)->create([
-            'type' => 1
-        ]);
-
         $comment = factory(\App\Comment::class)->create([
-            'user_id' => $user->id
+            'user_id' => $this->user->id
         ]);
 
-        $response = $this->actingAs($user, 'api')->delete('http://zomato.test/api/comments/'.$comment->id);
+        $response = $this->acting_as_user->delete($this->url . 'comments/' . $comment->id);
 
         $response->assertStatus(200);
 

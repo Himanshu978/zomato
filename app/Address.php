@@ -40,8 +40,8 @@ class Address extends Model
         return $this->morphTo();
     }
 
-    public function restaurants()
-    {
-        return $this->belongsToMany(Restaurant::class);
-    }
+//    public function restaurants()
+//    {
+//        return $this->belongsToMany(Restaurant::class);
+//    }
 }

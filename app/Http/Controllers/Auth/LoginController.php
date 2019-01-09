@@ -55,27 +55,25 @@ class LoginController extends Controller
      * @param LoginRequest $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function login(LoginRequest $request) {
+    public function login(LoginRequest $request)
+    {
 
-        //return "hey";
+        if (Auth::attempt([
+            'email'    => $request->input('email'),
+            'password' => $request->input('password')
+        ], true)
+        ) {
+            $user = Auth::user();
+            //    $success['token'] =  $user->createToken('MyApp')->accessToken;
+            $success['user'] = $user;
 
-        if( Auth::attempt( [
-          'email' => $request->input('email'),
-          'password' => $request->input('password')
-        ], true )
-      ){
-          $user = Auth::user();
-          $success['token'] =  $user->createToken('MyApp')->accessToken;
-          $success['user'] = $user;
-          return response()->json(['success' => $success], $this->successStatus);
+            return response()->json(['success' => $success], $this->successStatus);
 
-      }
-      else{
-          return response()->json(['error'=>'Unauthorised'], 401);
-      }
-
+        } else {
+            return response()->json(['error' => 'Unauthorised'], 401);
+        }
 
 
-  }
+    }
 
 }

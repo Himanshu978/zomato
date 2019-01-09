@@ -2,18 +2,101 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19e366ac-11cc-4f77-8096-c3b6d490adbc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/instaveritas.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/016af7ceb5a69864c6eb9915fbd56636.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/026276f07a243ef189ef034c60d37c5b.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/047c22e4f78cb2cca50e769341300359.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/0784a4e4af7dd17b99d0356b4b9beca6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/0d6dbdcd3c634c72cb8b18d48bba2a46.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/0e1f716ddf42f3fe354e1a10bfedd3fe.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/1aa1b9dd743c6b1e8c588c3d30c8e353.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/20c4599ceb707797c575b17b1c960d10.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/237b9707c1a58618ebbffa5091731295.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/2652ba5e502506180d9fb9d60bf3ad60.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/275ab4196c36038149be4ebffa2be891.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/2964facf6aa4edee2cd748dfab642853.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/3814c0aa12484602b9baa42d608f1186.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/3e05d1b89554385b28048bddf08a5c16.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/3ec916ec414409d3f82574ac0560cd9c.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/3ff708cdaae718cabf30177a0ee5fc26.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/403789356a804b98ea73844c629d7b76.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/42d78e0218afa03a3656f44735cc553f.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/4644a4c257b19ce7de8c13a47ddced34.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/4d8f3eb1745995a4b3cddd457c5a20bf.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/4e64932eed347321d2a48c740443252e.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/4fb2d9f204b3a87a3b722f6e61209712.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/4fd9f01d0c31fbac24fe25767633c0ac.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/50cbb1c89e219d668366ac48f9dbfcd9.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/5156557593e44cb36bb08840d04f9c45.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/540b4125c7c295447465d28dc0a4c4b4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/56c04de7cc37f586c5f489252042eb51.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/65d6e001de1a12af5f3ad76ad12b119b.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/6776c8b7f4c7f35a0cef7c9c0f958756.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/6fb0e8694ac17aa92195abb295aad2c1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/7168851468b7a3351d6bce7d56e6d16f.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/72227090e026775166ba3dd82742b03f.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/7a49b7763d37930a8ae07ac097a9f549.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/833587d1bf2c0cd64d634e09e1a8681a.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/83a7724c51f36b9c1e1c70394c8c5d93.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/8642cf816c6e0c411a9854bec84c8986.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/87797c50fcc37c4f2ca3040836311bbe.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/8bbacc55e2b57f0bcd7ae9f27b133640.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/90a7b6a4977093e55666c1bf3db27ef1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/90f570c398633738fff66675349b7156.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/91131bd1911c06cbc8dc90cb321248aa.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/926212168d2ed64c856f0e492653cf34.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/96cb3c9ba85bc899afd01ecbd0b40a1e.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/991ad48695d0c516cf34ffa468416e34.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/a17a9f34afa9a13b5a1b791b5a307e3e.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/a34aae0bef7ec29ff31d41d40681d235.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/a88708db696f9f0321ccf121cc625260.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/a9593fdf0aa784d67b3da51db4c5dafe.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/ab37efc0846106d27773abc82281aaa1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/abf4107b5285103ffb87ced7af5084ec.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/aefd09f2dadbb015a5a77ca88c4f7c4c.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/af15dce0e7c55c04d38c7ea9de766665.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/b0f3ce422e6dd5612d69c419e024b086.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/b455c7a28b5c250a61c6964676c0492c.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/b45a299ce54ccad5fa6fe20848808f6d.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/b6a1b897e545675c31ecc5709cbd5fa0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/b76ef570c506faeffeac689c270db298.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/bc7f9ea519fc6863d99510e3737cfed1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/c09e3698f9e128f028ecdb55ff250e32.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/c8225f64cd14520db0b49ad1b8d3ea1f.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/cde827e99dcf039af2b53fc66ba1015c.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/d15e3268f9ff029f66942217987ad55b.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/d405fb58b81a5cf48e1f4d426ab42eea.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/d7e3cc224a25fe86a054ce79512063f2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/df6aac2846fe9d56c3461d5bb569c9b4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/e24f9f65650a80f7d4fe025b53154912.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/e45e32920bea3aaa0f7fb4ea926d99b5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/e701920bd355aaec9b60c4e355756d62.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/e862f926689904d86c17ad0a298e32ce.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/eb79923a6366af3d92bc1fcda658e7e1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/ebaddeeb1b7d1f5b89b63974170441e2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/edbcf744430beede2c900ee63a9465d0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/ee591755ffb167ff85536f5f96dd6564.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/f01c3ac72ec8b933f08975b8681c602f.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/f9e35d6853290bc8e71997eab06cc371.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fac8d39447b1aa6f509a2426ec79293b.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fd05fd2cfd001f9ec57badbbc4dc800a.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fdd75eea0aa588b472f4eca2e8c9f8d4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/fecf4baa4321b038f177b9f80c348541.jpg" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/favicon.ico" afterPath="$PROJECT_DIR$/tests/Unit/TestSetUp.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tests/Unit/AddressTest.php" afterPath="$PROJECT_DIR$/tests/Unit/StatesAndDistrictsTest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/RestaurantController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/RestaurantController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/CreateFoodRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/CreateFoodRequest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/CreateRestaurantRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/CreateRestaurantRequest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/ApiProviders/CommentApiProvider.php" afterPath="$PROJECT_DIR$/app/Providers/ApiProviders/CommentApiProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/ApiProviders/RestaurantApiProvider.php" afterPath="$PROJECT_DIR$/app/Providers/ApiProviders/RestaurantApiProvider.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Address.php" afterPath="$PROJECT_DIR$/app/Address.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Tasks/RestaurantTask.php" afterPath="$PROJECT_DIR$/app/Tasks/RestaurantTask.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/api.php" afterPath="$PROJECT_DIR$/routes/api.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/Unit/CommentTest.php" afterPath="$PROJECT_DIR$/tests/Unit/CommentTest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/Unit/FoodsTest.php" afterPath="$PROJECT_DIR$/tests/Unit/FoodsTest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/Unit/OrdersTest.php" afterPath="$PROJECT_DIR$/tests/Unit/OrdersTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/Unit/RegisterTest.php" afterPath="$PROJECT_DIR$/tests/Unit/RegisterTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/Unit/RestaurantTest.php" afterPath="$PROJECT_DIR$/tests/Unit/RestaurantTest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/Unit/ReviewsTest.php" afterPath="$PROJECT_DIR$/tests/Unit/ReviewsTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/Unit/VoteTest.php" afterPath="$PROJECT_DIR$/tests/Unit/VoteTest.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,44 +120,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <file leaf-file-name="RestaurantTest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/Unit/RestaurantTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="48" column="26" lean-forward="false" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommentTest.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/Unit/CommentTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1390">
-              <caret line="89" column="35" lean-forward="false" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
+            <state relative-caret-position="32">
+              <caret line="125" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
               <folding>
-                <element signature="e#30#85#0#PHP" expanded="true" />
+                <element signature="e#30#49#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommentApiProvider.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Providers/ApiProviders/CommentApiProvider.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-218">
-              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CreatesApplication.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/CreatesApplication.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -82,35 +135,75 @@
       <file leaf-file-name="ReviewsTest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/Unit/ReviewsTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="127" column="35" lean-forward="false" selection-start-line="127" selection-start-column="35" selection-end-line="127" selection-end-column="35" />
+            <state relative-caret-position="547">
+              <caret line="74" column="45" lean-forward="false" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StatesAndDistrictsTest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/Unit/StatesAndDistrictsTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="952">
+              <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestSetUp.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/Unit/TestSetUp.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-87">
+              <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
               <folding>
                 <element signature="e#30#49#0#PHP" expanded="true" />
-                <element signature="e#936#978#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrdersTest.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/Unit/OrdersTest.php">
+      <file leaf-file-name="CommentTest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/Unit/CommentTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="120" column="101" lean-forward="false" selection-start-line="120" selection-start-column="101" selection-end-line="120" selection-end-column="101" />
+            <state relative-caret-position="-214">
+              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegisterTest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/Unit/RegisterTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="50" column="45" lean-forward="false" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
               <folding>
                 <element signature="e#30#85#0#PHP" expanded="true" />
-                <element signature="e#896#938#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FoodApiProvider.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Providers/ApiProviders/FoodApiProvider.php">
+      <file leaf-file-name="VoteTest.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/Unit/VoteTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="144">
+              <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExampleTest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/Unit/ExampleTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="18" selection-end-column="1" />
+              <folding>
+                <element signature="e#30#49#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -118,8 +211,8 @@
       <file leaf-file-name="RestaurantApiProvider.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Providers/ApiProviders/RestaurantApiProvider.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-150">
-              <caret line="131" column="5" lean-forward="false" selection-start-line="131" selection-start-column="5" selection-end-line="131" selection-end-column="5" />
+            <state relative-caret-position="-1950">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -128,23 +221,9 @@
       <file leaf-file-name="ModelFactory.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/factories/ModelFactory.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="66" column="10" lean-forward="false" selection-start-line="64" selection-start-column="7" selection-end-line="66" selection-end-column="10" />
+            <state relative-caret-position="173">
+              <caret line="56" column="49" lean-forward="true" selection-start-line="56" selection-start-column="7" selection-end-line="56" selection-end-column="49" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RestaurantTest.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/Unit/RestaurantTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="161" column="5" lean-forward="true" selection-start-line="161" selection-start-column="5" selection-end-line="161" selection-end-column="5" />
-              <folding>
-                <element signature="e#30#49#0#PHP" expanded="true" />
-                <element signature="e#1177#1219#0#PHP" expanded="false" />
-                <element signature="e#2783#2825#0#PHP" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -163,11 +242,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/migrations/2019_01_04_094704_drop_address_id_on_users_table.php" />
-        <option value="$PROJECT_DIR$/app/Review.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_01_04_103238_drop_address_id_on_restaurants_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_01_04_104429_add_morphto_relationship_on_addresses_table.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/LoginRequest.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_04_111319_add_user_id_to_restaurants_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_12_22_093054_create_ordered_foods_table.php" />
@@ -192,28 +266,33 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_01_03_124944_add_foreign_key_to_foods_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_12_24_054444_create_cuisine_restaurants_table.php" />
         <option value="$PROJECT_DIR$/database/factories/ModelFactory.php" />
-        <option value="$PROJECT_DIR$/tests/Unit/RegisterTest.php" />
-        <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_08_113730_create_addresses_orders_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_08_113903_create_addresses_restaurants_table.php" />
-        <option value="$PROJECT_DIR$/app/Address.php" />
         <option value="$PROJECT_DIR$/app/Restaurant.php" />
-        <option value="$PROJECT_DIR$/tests/Unit/AddressTest.php" />
-        <option value="$PROJECT_DIR$/app/Tasks/RestaurantTask.php" />
-        <option value="$PROJECT_DIR$/tests/Unit/RestaurantTest.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/CreateReviewRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/CreateRestaurantRequest.php" />
-        <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" />
         <option value="$PROJECT_DIR$/app/Providers/ApiProviders/CommentApiProvider.php" />
-        <option value="$PROJECT_DIR$/tests/Unit/VoteTest.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/CreateFoodRequest.php" />
-        <option value="$PROJECT_DIR$/tests/Unit/FoodsTest.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RestaurantController.php" />
         <option value="$PROJECT_DIR$/app/Providers/ApiProviders/RestaurantApiProvider.php" />
-        <option value="$PROJECT_DIR$/tests/Unit/ReviewsTest.php" />
-        <option value="$PROJECT_DIR$/tests/Unit/CommentTest.php" />
+        <option value="$PROJECT_DIR$/routes/api.php" />
+        <option value="$PROJECT_DIR$/app/User.php" />
+        <option value="$PROJECT_DIR$/app/Address.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" />
+        <option value="$PROJECT_DIR$/storage/logs/laravel-2019-01-09.log" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
+        <option value="$PROJECT_DIR$/app/Tasks/RestaurantTask.php" />
+        <option value="$PROJECT_DIR$/tests/Unit/AddressTest.php" />
+        <option value="$PROJECT_DIR$/tests/Unit/FoodsTest.php" />
         <option value="$PROJECT_DIR$/tests/Unit/OrdersTest.php" />
+        <option value="$PROJECT_DIR$/tests/Unit/RegisterTest.php" />
+        <option value="$PROJECT_DIR$/tests/Unit/ReviewsTest.php" />
+        <option value="$PROJECT_DIR$/tests/Unit/StatesAndDistrictsTest.php" />
+        <option value="$PROJECT_DIR$/tests/Unit/TestSetUp.php" />
+        <option value="$PROJECT_DIR$/tests/Unit/CommentTest.php" />
+        <option value="$PROJECT_DIR$/tests/Unit/RestaurantTest.php" />
+        <option value="$PROJECT_DIR$/tests/Unit/VoteTest.php" />
       </list>
     </option>
   </component>
@@ -287,6 +366,20 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zomato" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zomato" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="tests" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -319,11 +412,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Feature" />
+              <option name="myItemId" value="storage" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -401,6 +490,24 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Tasks" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zomato" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zomato" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Providers" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -419,29 +526,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zomato" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zomato" />
+              <option name="myItemId" value="Providers" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
+              <option name="myItemId" value="ApiProviders" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -558,12 +647,12 @@
       <option name="presentableId" value="Default" />
       <updated>1546500025448</updated>
       <workItem from="1546500029843" duration="47982000" />
-      <workItem from="1546845190738" duration="50986000" />
+      <workItem from="1546845190738" duration="68935000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98968000" />
+    <option name="totallyTimeSpent" value="116917000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -576,6 +665,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2584814" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -585,7 +675,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2911932" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37073863" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -611,71 +701,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/storage/app/image_1546426500.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/Users/instaveritas/practiceWeb/zomato/public/image_1546427479.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/Users/instaveritas/practiceWeb/zomato/public/image_1546427338.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/Users/instaveritas/practiceWeb/zomato/public/image_1546427148.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/image_1546428331.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/StateFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="2" lean-forward="false" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/UserFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-83">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/fzaninotto/faker/src/Faker/Generator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1186">
-          <caret line="191" column="6" lean-forward="false" selection-start-line="191" selection-start-column="6" selection-end-line="191" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="47" column="31" lean-forward="false" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_08_113730_create_addresses_orders_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="44" lean-forward="false" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_04_113428_add_cuisine_id_foreign_key_on_cuisine_restaurants_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-141">
@@ -688,32 +713,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
           <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Unit/AddressTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="44" column="55" lean-forward="false" selection-start-line="44" selection-start-column="55" selection-end-line="44" selection-end-column="55" />
-          <folding>
-            <element signature="e#30#85#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Address.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="44" column="55" lean-forward="false" selection-start-line="44" selection-start-column="55" selection-end-line="44" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Tasks/RestaurantTask.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="29" column="56" lean-forward="false" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -738,14 +737,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="31" lean-forward="true" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Unit/ExampleTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -816,38 +807,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Restaurant.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="50" column="27" lean-forward="true" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Review.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/ApiProviders/ReviewApiProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-517">
-          <caret line="18" column="64" lean-forward="false" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Vote.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-235">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Image.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-137">
@@ -864,16 +823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Unit/VoteTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="39" column="56" lean-forward="false" selection-start-line="39" selection-start-column="56" selection-end-line="39" selection-end-column="56" />
-          <folding>
-            <element signature="e#30#85#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FoodController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-236">
@@ -886,25 +835,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Unit/FoodsTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
-          <folding>
-            <element signature="e#30#85#0#PHP" expanded="true" />
-            <element signature="e#1100#1142#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Unit/RegisterTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -925,14 +855,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RestaurantController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="79" column="53" lean-forward="false" selection-start-line="79" selection-start-column="53" selection-end-line="79" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/ApiProviders/FoodApiProvider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -941,23 +863,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/ApiProviders/RestaurantApiProvider.php">
+    <entry file="file://$PROJECT_DIR$/app/Vote.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-150">
-          <caret line="131" column="5" lean-forward="false" selection-start-line="131" selection-start-column="5" selection-end-line="131" selection-end-column="5" />
+        <state relative-caret-position="-6">
+          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/ApiProviders/CommentApiProvider.php">
+    <entry file="file://$PROJECT_DIR$/app/Review.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-218">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        <state relative-caret-position="258">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/CreatesApplication.php">
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Testing/TestCase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="27" column="4" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/RegisterRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="35" column="12" lean-forward="true" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReviewController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -965,63 +903,223 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Unit/RestaurantTest.php">
+    <entry file="file://$PROJECT_DIR$/app/Providers/ApiProviders/CommentApiProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="161" column="5" lean-forward="true" selection-start-line="161" selection-start-column="5" selection-end-line="161" selection-end-column="5" />
-          <folding>
-            <element signature="e#30#49#0#PHP" expanded="true" />
-            <element signature="e#1177#1219#0#PHP" expanded="false" />
-            <element signature="e#2783#2825#0#PHP" expanded="false" />
-          </folding>
+        <state relative-caret-position="-80">
+          <caret line="52" column="26" lean-forward="true" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Unit/ReviewsTest.php">
+    <entry file="file://$PROJECT_DIR$/app/Address.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="127" column="35" lean-forward="false" selection-start-line="127" selection-start-column="35" selection-end-line="127" selection-end-column="35" />
-          <folding>
-            <element signature="e#30#49#0#PHP" expanded="true" />
-            <element signature="e#936#978#0#PHP" expanded="false" />
-          </folding>
+        <state relative-caret-position="475">
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Unit/CommentTest.php">
+    <entry file="file://$PROJECT_DIR$/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1390">
-          <caret line="89" column="35" lean-forward="false" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
-          <folding>
-            <element signature="e#30#85#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="284">
+          <caret line="51" column="6" lean-forward="false" selection-start-line="51" selection-start-column="6" selection-end-line="51" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Restaurant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="57" column="7" lean-forward="true" selection-start-line="57" selection-start-column="7" selection-end-line="57" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-01-09.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="3056" column="65" lean-forward="false" selection-start-line="3056" selection-start-column="65" selection-end-line="3056" selection-end-column="65" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="48" column="26" lean-forward="false" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="26" />
+        <state relative-caret-position="132">
+          <caret line="39" column="26" lean-forward="false" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/ModelFactory.php">
+    <entry file="file://$PROJECT_DIR$/tests/CreatesApplication.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="66" column="10" lean-forward="false" selection-start-line="64" selection-start-column="7" selection-end-line="66" selection-end-column="10" />
+        <state relative-caret-position="102">
+          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RestaurantController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-170">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#67#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/ApiProviders/ReviewApiProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="66" column="29" lean-forward="true" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="81" column="29" lean-forward="false" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
+          <folding>
+            <element signature="e#45#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/TestCase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/Unit/OrdersTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="120" column="101" lean-forward="false" selection-start-line="120" selection-start-column="101" selection-end-line="120" selection-end-column="101" />
+        <state relative-caret-position="180">
+          <caret line="33" column="45" lean-forward="false" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Unit/FoodsTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="783">
+          <caret line="68" column="45" lean-forward="false" selection-start-line="68" selection-start-column="45" selection-end-line="68" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Tasks/RestaurantTask.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/ApiProviders/RestaurantApiProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1950">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/ModelFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="56" column="49" lean-forward="true" selection-start-line="56" selection-start-column="7" selection-end-line="56" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Unit/ExampleTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="18" selection-end-column="1" />
+          <folding>
+            <element signature="e#30#49#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Unit/RegisterTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="50" column="45" lean-forward="false" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
           <folding>
             <element signature="e#30#85#0#PHP" expanded="true" />
-            <element signature="e#896#938#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Unit/CommentTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-214">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Unit/RestaurantTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="125" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+          <folding>
+            <element signature="e#30#49#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Unit/ReviewsTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="74" column="45" lean-forward="false" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Unit/StatesAndDistrictsTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Unit/TestSetUp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-87">
+          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding>
+            <element signature="e#30#49#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Unit/VoteTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
