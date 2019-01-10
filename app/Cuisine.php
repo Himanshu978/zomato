@@ -15,7 +15,7 @@ class Cuisine extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function foods() {
-      return  $this->hasMany(Food::class);
+        return  $this->hasMany(Food::class);
     }
 
     /**

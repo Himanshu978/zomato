@@ -18,6 +18,9 @@ class ReviewsTest extends TestSetUp
     /** @test */
     public function it_gets_all_reviews_of_a_single_restaurant()
     {
+        $reviews_count = 5;
+        $item_index = rand(0, $reviews_count-1);
+
         $restaurant = factory(Restaurant::class)->create();
 
         $data = [
@@ -25,15 +28,15 @@ class ReviewsTest extends TestSetUp
             'restaurant_id' => $restaurant->id,
         ];
 
-        $review = factory(\App\Review::class)->create($data);
-
-
+        $review = factory(\App\Review::class, $reviews_count)->create($data);
 
         $response =  $this->acting_as_user->get( $this->url.'reviews/' . $restaurant->id);
 
         $response->assertStatus(200);
 
-        $responseData = $response->getData()[0];
+        $this->assertCount($reviews_count, $response->getData());
+
+        $responseData = $response->getData()[$item_index];
 
         $this->assertNotEmpty($responseData);
         $this->assertEquals($data['content'], $responseData->content, 'Review Content did not match!');

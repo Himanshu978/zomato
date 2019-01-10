@@ -19,6 +19,9 @@ class RestaurantTest extends TestSetUp
     /** @test */
     public function it_gets_list_of_all_restaurants()
     {
+        $restaurants_count = 5;
+        $item_index = rand(0, $restaurants_count-1);
+
         $data = [
             'name'        => $this->faker->name,
             'description' => $this->faker->text,
@@ -30,13 +33,14 @@ class RestaurantTest extends TestSetUp
             },
         ];
 
-        $restaurants = factory(Restaurant::class)->create($data);
+        $restaurants = factory(Restaurant::class, $restaurants_count)->create($data);
 
         $response = $this->acting_as_user->get($this->url . 'restaurants');
 
         $response->assertStatus(200);
 
-        $responseData = $response->getData()[0];
+        $this->assertCount($restaurants_count, $response->getData());
+        $responseData = $response->getData()[$item_index];
 
         $this->assertNotEmpty($responseData);
         $this->assertEquals($data['name'], $responseData->name);

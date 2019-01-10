@@ -14,17 +14,21 @@ class StatesAndDistrictsTest extends TestSetUp
     /** @test */
     public function it_gets_list_of_all_the_states()
     {
+        $states_count = 10;
+        $item_index = rand(0, $states_count-1);
         $data = [
             'name' => $this->faker->name
         ];
 
-        factory(\App\State::class)->create($data);
+        factory(\App\State::class, $states_count)->create($data);
 
-        $response = $this->acting_as_user->get($this->url.'states');
+        $response = $this->acting_as_user->get($this->url . 'states');
 
         $response->assertStatus(200);
 
-        $responseData = $response->getData()[0];
+        $this->assertCount($states_count, $response->getData());
+
+        $responseData = $response->getData()[$item_index];
 
         $this->assertNotEmpty($responseData);
         $this->assertEquals($data['name'], $responseData->name);
@@ -35,6 +39,8 @@ class StatesAndDistrictsTest extends TestSetUp
     /** @test */
     public function it_gets_list_of_all_the_districts()
     {
+        $district_count = 5;
+        $item_index = rand(0, $district_count-1);
 
         $state = factory(\App\State::class)->create();
 
@@ -43,13 +49,15 @@ class StatesAndDistrictsTest extends TestSetUp
             'state_id' => $state->id
         ];
 
-        factory(\App\District::class)->create($data);
+        factory(\App\District::class, $district_count)->create($data);
 
-        $response =  $this->acting_as_user->get($this->url.'districts/' . $state->id);
+        $response = $this->acting_as_user->get($this->url . 'districts/' . $state->id);
 
         $response->assertStatus(200);
 
-        $responseData = $response->getData()[0];
+        $this->assertCount($district_count, $response->getData());
+
+        $responseData = $response->getData()[$item_index];
 
         $this->assertNotEmpty($responseData);
         $this->assertEquals($data['name'], $responseData->name);

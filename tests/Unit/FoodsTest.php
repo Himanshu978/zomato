@@ -18,6 +18,9 @@ class FoodsTest extends TestSetUp
     public function it_gets_all_foods_of_a_single_restaurant()
     {
         $restaurant = factory(Restaurant::class)->create();
+        $foodsCount = 5;
+
+        $item_index = rand(0, $foodsCount-1);
 
         $data = [
             'name'          => $this->faker->name,
@@ -29,7 +32,7 @@ class FoodsTest extends TestSetUp
             'description'   => $this->faker->text,
         ];
 
-        factory(\App\Food::class)->create($data);
+        factory(\App\Food::class, $foodsCount)->create($data);
 
         $response = $this->acting_as_user->get($this->url . 'restaurants/' . $restaurant->id . '/foods');
 
@@ -38,9 +41,10 @@ class FoodsTest extends TestSetUp
         $responseData = $response->getData();
 
         $this->assertNotEmpty($responseData);
-        $this->assertEquals($data['name'], $responseData->foods[0]->name);
-        $this->assertEquals($data['price'], $responseData->foods[0]->price);
-        $this->assertEquals($data['description'], $responseData->foods[0]->description);
+        $this->assertCount($foodsCount, $responseData->foods);
+        $this->assertEquals($data['name'], $responseData->foods[$item_index]->name);
+        $this->assertEquals($data['price'], $responseData->foods[$item_index]->price);
+        $this->assertEquals($data['description'], $responseData->foods[$item_index]->description);
 
     }
 
