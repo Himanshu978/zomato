@@ -14,7 +14,7 @@ class TestSetUp extends TestCase
     protected $faker = null;
 
     /** @before */
-    public function setUp()
+    protected function setUp()
     {
         parent::setUp();
 

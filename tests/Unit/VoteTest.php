@@ -35,7 +35,6 @@ class VoteTest extends TestSetUp
     /** @test */
     public function it_toggles_the_like_on_the_image_of_restaurant()
     {
-
         $restaurant = factory(\App\Restaurant::class)->create();
 
         $image = $restaurant->image()->create([

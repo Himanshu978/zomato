@@ -28,6 +28,8 @@ class OrdersTest extends TestSetUp
 
         $order = factory(\App\Order::class, $ordersCount )->create($data);
 
+
+
         $response = $this->acting_as_user->get($this->url . 'orders');
 
         $response->assertStatus(200);
@@ -38,6 +40,8 @@ class OrdersTest extends TestSetUp
         $this->assertNotEmpty($responseData);
         $this->assertEquals($data['user_id'], $responseData->orders[$item_no]->user_id);
         $this->assertEquals($data['status'], $responseData->orders[$item_no]->status);
+
+        $this->assertTrue(true);
 
     }
 
@@ -63,6 +67,8 @@ class OrdersTest extends TestSetUp
         $response = $this->acting_as_user->post($this->url . 'orders', $data);
 
         $response->assertStatus(200);
+
+        $this->assertTrue(true);
     }
 
 

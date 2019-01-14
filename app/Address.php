@@ -18,13 +18,6 @@ class Address extends Model
     protected $guarded = ['id'];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-//    public function user() {
-//        return $this->belongsTo(User::class);
-//    }
-
-    /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function district()
@@ -32,16 +25,14 @@ class Address extends Model
         return $this->belongsTo(District::class);
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\MorphTo
-     */
-    public function addressable()
+    public function users()
     {
-        return $this->morphTo();
+        return $this->morphedByMany(User::class, 'addressable');
     }
 
-//    public function restaurants()
-//    {
-//        return $this->belongsToMany(Restaurant::class);
-//    }
+    public function restaurant()
+    {
+        return $this->morphedByMany(Restaurant::class, 'addressable');
+    }
+
 }

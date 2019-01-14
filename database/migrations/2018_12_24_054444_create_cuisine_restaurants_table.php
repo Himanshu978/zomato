@@ -19,6 +19,8 @@ class CreateCuisineRestaurantsTable extends Migration
             $table->unsignedInteger('cuisine_id');
             $table->timestamps();
 
+            $table->unique(['restaurant_id', 'cuisine_id']);
+
             $table->foreign('cuisine_id')->references('id')->on('cuisines');
             $table->foreign('restaurant_id')->references('id')->on('restaurants');
         });

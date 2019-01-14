@@ -22,7 +22,6 @@ class CreateFoodsTable extends Migration
             $table->text('description');
             $table->timestamps();
 
-            // $table->foreign('restaurant_id')-references('id')->on('restaurant');
         });
     }
 

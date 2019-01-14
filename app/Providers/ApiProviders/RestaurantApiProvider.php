@@ -60,7 +60,7 @@ class RestaurantApiProvider
      */
     public function show($id)
     {
-        $restaurant = Restaurant::findOrFail($id)->load('cuisines', 'address.district.state', 'image.restaurantComments.user', 'image.restaurantVotes');
+        $restaurant = Restaurant::findOrFail($id)->load('cuisines', 'addresses.district.state', 'image.restaurantComments.user', 'image.restaurantVotes');
         return $restaurant;
     }
 

@@ -19,6 +19,7 @@ class CreateAddressesTable extends Migration
             $table->unsignedInteger('district_id');
             $table->string('zip');
 
+
             $table->timestamps();
         });
     }

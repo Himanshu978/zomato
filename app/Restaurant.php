@@ -28,9 +28,9 @@ class Restaurant extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphOne
      */
-    public function address()
+    public function addresses()
     {
-        return $this->morphOne(Address::class, 'addressable');
+        return $this->morphToMany(Address::class, 'addressable');
     }
 
 

@@ -7,8 +7,6 @@ $factory->define(App\Address::class, function (Faker\Generator $faker) {
              return factory(App\District::class)->create()->id;
         },
         'zip' => $faker->postcode,
-        'addressable_id' => $faker->randomNumber(),
-        'addressable_type' => rand(0, 1) == 1 ? 'App\User' : 'App\Restaurant',
     ];
 });
 
@@ -18,8 +16,8 @@ $factory->define(App\Comment::class, function (Faker\Generator $faker) {
         'user_id' => function () {
              return factory(App\User::class)->create()->id;
         },
+        'commenteable_type' => rand(0, 1) == 1 ? 'image' : 'review',
         'commenteable_id' => $faker->randomNumber(),
-        'commenteable_type' => rand(0, 1) == 1 ? 'App\Image' : 'App\Review',
     ];
 });
 
@@ -54,9 +52,9 @@ $factory->define(App\Food::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Image::class, function (Faker\Generator $faker) {
     return [
-        'url' => $faker->image('public',400,300),
+        'url' => $faker->url,
+        'imageable_type' => rand(0, 1) == 1 ? 'restaurant' : 'review',
         'imageable_id' => $faker->randomNumber(),
-        'imageable_type' => rand(0, 1) == 1 ? 'App\Restaurant' : 'App\Review',
     ];
 });
 
@@ -76,12 +74,12 @@ $factory->define(App\Restaurant::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'description' => $faker->text,
-        'phone' => $faker->phoneNumber,
+        'phone' => '932432423423',
         'opening' => $faker->time(),
         'closing' => $faker->time(),
         'user_id' => function () {
             return factory(App\User::class)->create()->id;
-        },
+        }
     ];
 });
 
@@ -110,7 +108,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'age' => $faker->randomNumber(),
         'firstname' => $faker->firstName,
         'lastname' => $faker->lastName,
-        'phone' => $faker->phoneNumber,
+        'phone' => '973455345342',
         'email_verified_at' => $faker->dateTimeBetween(),
         'password' => bcrypt($faker->password),
         'type' => $faker->randomNumber(),
@@ -123,8 +121,8 @@ $factory->define(App\Vote::class, function (Faker\Generator $faker) {
         'user_id' => function () {
              return factory(App\User::class)->create()->id;
         },
+        'voteable_type' => rand(0, 1) == 1 ? 'image' : 'review',
         'voteable_id' => $faker->randomNumber(),
-        'voteable_type' => rand(0, 1) == 1 ? 'App\Image' : 'App\Review',
     ];
 });
 

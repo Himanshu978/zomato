@@ -20,11 +20,12 @@ class CreateRestaurantsTable extends Migration
             $table->string('phone');
             $table->time('opening');
             $table->time('closing');
-            $table->unsignedInteger('address_id');
+            $table->unsignedInteger('user_id');
             $table->timestamps();
 
-          //  $table->foreign('address_id')->references('id')->on('addresses')->onDelete('cascade');
-        });
+            $table->foreign('user_id')->references('id')->on('users');
+
+           });
     }
 
     /**

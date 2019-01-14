@@ -18,5 +18,4 @@ class State extends Model
        return $this->hasMany(District::class);
     }
 
-
 }

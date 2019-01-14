@@ -11,6 +11,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Cuisine extends Model
 {
+
+    protected $guarded = ['id'];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

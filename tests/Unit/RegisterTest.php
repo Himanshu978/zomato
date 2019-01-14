@@ -29,7 +29,7 @@ class RegisterTest extends TestCase
 
         $data = [
             'username'       => $this->faker->userName,
-            'email'          => $this->faker->safeEmail,
+            'email'          => 'shimanshu12596@gmail.com',
             'age'            => '22',
             'firstname'      => 'Jack',
             'lastname'       => 'Sparrow',

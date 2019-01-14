@@ -3,6 +3,7 @@
 namespace App\Tasks;
 
 
+use App\Address;
 use App\Restaurant;
 use App\District;
 use DB;
@@ -22,12 +23,13 @@ class RestaurantTask
             $data = $this->setData($restaurantData);
 
             $restaurant = Restaurant::create($data);
-
-            $restaurant->address()->create([
+            $address = Address::create([
                 'street_address' => $restaurantData->street_address,
                 'district_id'    => $restaurantData->district_id,
                 'zip'            => $restaurantData->zip
             ]);
+
+            $restaurant->addresses()->save($address);
 
 
             if ($restaurantData->image) {
@@ -37,6 +39,7 @@ class RestaurantTask
             DB::commit();
 
             return $restaurant;
+
         } catch (\Exception $ex) {
             DB::rollback();
 

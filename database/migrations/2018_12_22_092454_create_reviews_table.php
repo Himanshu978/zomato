@@ -20,9 +20,8 @@ class CreateReviewsTable extends Migration
             $table->unsignedInteger('restaurant_id');
             $table->timestamps();
 
-            $table->foreign('user_id','restaurant_id')->references('id','id')->on('users','restaurants')->onDelete('cascade','cascade');
-         //   $table->foreign('restaurant_id')->references('id')->on('restaurants')->onDelete('cascade');
-        });
+
+            });
     }
 
     /**

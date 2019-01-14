@@ -54,7 +54,6 @@ class RestaurantTest extends TestSetUp
     /** @test */
     public function it_gets_a_single_restaurant()
     {
-
         $data = [
             'name'        => $this->faker->name,
             'description' => $this->faker->text,
@@ -67,6 +66,8 @@ class RestaurantTest extends TestSetUp
         ];
 
         $restaurant = factory(Restaurant::class)->create($data);
+        $restaurant->addresses()->save(factory(\App\Address::class)->create());
+
 
         $response = $this->acting_as_user->get($this->url . 'restaurants/' . $restaurant->id);
 

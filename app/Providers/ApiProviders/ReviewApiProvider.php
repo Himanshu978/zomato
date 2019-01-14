@@ -15,13 +15,11 @@ class ReviewApiProvider {
      */
     public function store($reviewData) {
 
-
         return Restaurant::findOrFail($reviewData['restaurant_id'])->reviews()
         ->create([
             'content' => $reviewData['content'],
             'user_id' => auth()->user()->id
         ]);
-
     }
 
     /**

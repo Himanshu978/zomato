@@ -20,6 +20,8 @@ class CreateOrderedFoodsTable extends Migration
             $table->unsignedInteger('qty');
             $table->timestamps();
 
+            $table->unique(['food_id', 'order_id']);
+
             $table->foreign('food_id')->references('id')->on('foods')->onDelete('cascade');
             $table->foreign( 'order_id')->references('id')->on('orders')->onDelete('cascade');
 

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * Class Food
@@ -17,13 +18,6 @@ class Food extends Model
     protected $guarded = ['id'];
 
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function reviews()
-    {
-        return $this->hasMany(Review::class);
-    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -42,13 +36,8 @@ class Food extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return BelongsToMany
      */
-    public function orderdFoods()
-    {
-        return $this->hasMany(OrderedFood::class);
-    }
-
     public function orders() {
         return $this->belongsToMany(Order::class, 'foods_orders')->withPivot('qty')->withTimestamps();
     }

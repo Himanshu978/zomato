@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateImagesTable extends Migration
+class AddForeignKeyToAddressTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('images', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('url');
-            $table->morphs('imageable');
-            $table->timestamps();
+        Schema::table('addresses', function (Blueprint $table) {
+            $table->foreign('district_id')->references('id')->on('districts');
+
         });
     }
 
@@ -28,6 +26,8 @@ class CreateImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('images');
+        Schema::table('addresses', function (Blueprint $table) {
+            Schema::dropIfExists('district_id');
+        });
     }
 }

@@ -4,6 +4,7 @@ namespace App\Providers\ApiProviders;
 
 use App\Food;
 use App\Restaurant;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -12,13 +13,15 @@ use Illuminate\Support\Facades\Auth;
  *
  * @package App\Providers\ApiProviders
  */
-class FoodApiProvider {
+class FoodApiProvider
+{
 
     /**
      * @param $restaurant_id
      * @return mixed
      */
-    public function getAll($restaurant_id) {
+    public function getAll($restaurant_id)
+    {
         return Restaurant::findOrFail($restaurant_id)->load('foods');
     }
 
@@ -26,26 +29,37 @@ class FoodApiProvider {
      * @param $foodData
      * @return mixed
      */
-    public function create($foodData){
-        return Food::create([
-            'name' => $foodData['name'],
-            'description' =>  $foodData['description'],
-            'price' =>  $foodData['price'],
-            'cuisine_id' =>  $foodData['cuisine_id'],
+    public function create($foodData)
+    {
+        $food = Food::create([
+            'name'          => $foodData['name'],
+            'description'   => $foodData['description'],
+            'price'         => $foodData['price'],
+            'cuisine_id'    => $foodData['cuisine_id'],
             'restaurant_id' => $foodData['restaurant_id']
         ]);
+
+        if($food){
+            Artisan::call('mail:cuisine-added', [
+                'user' => 1
+            ]);
+        }
+
+        return $food;
+
     }
 
     /**
      * @param $foodData
      * @return bool
      */
-    public function update($foodData){
+    public function update($foodData)
+    {
         return Food::update([
-            'name' => $foodData['name'],
-            'description' =>  $foodData['description'],
-            'price' =>  $foodData['price'],
-            'cuisine_id' =>  $foodData['cuisine_id'],
+            'name'        => $foodData['name'],
+            'description' => $foodData['description'],
+            'price'       => $foodData['price'],
+            'cuisine_id'  => $foodData['cuisine_id'],
         ]);
     }
 
